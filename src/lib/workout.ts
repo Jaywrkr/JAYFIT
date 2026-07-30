@@ -1,4 +1,5 @@
-import { Session } from "./types";
+import { Session, ExerciseType } from "./types";
+import { getExerciseById } from "./exercises";
 
 /** Estimated seconds per repetition, used to size timers and duration estimates for rep-based exercises. */
 export const REP_SECONDS = 3.5;
@@ -86,6 +87,16 @@ export function buildRounds(session: Session): WorkoutRound[] {
   }
 
   return rounds;
+}
+
+/** Tipos de ejercicio únicos presentes en una sesión, para poder filtrarla por tipo. */
+export function getSessionTypes(session: Session): ExerciseType[] {
+  const types = new Set<ExerciseType>();
+  session.blocks.forEach((block) => {
+    const exercise = getExerciseById(block.exerciseId);
+    if (exercise) types.add(exercise.type);
+  });
+  return Array.from(types);
 }
 
 export function estimateSessionSeconds(session: Session): number {

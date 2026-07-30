@@ -4,6 +4,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- PIERNAS ----------
   {
     id: "sentadilla-bw",
+    type: "fuerza",
     name: "Sentadilla con peso corporal",
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
@@ -12,6 +13,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sentadilla-goblet",
+    type: "fuerza",
     name: "Sentadilla goblet con kettlebell",
     bodyParts: ["piernas", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -20,6 +22,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "zancada-alterna",
+    type: "fuerza",
     name: "Zancada alterna",
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
@@ -28,6 +31,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "zancada-kb",
+    type: "fuerza",
     name: "Zancada con kettlebell en goblet",
     bodyParts: ["piernas", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -36,6 +40,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "zancada-lateral",
+    type: "fuerza",
     name: "Zancada lateral",
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
@@ -44,6 +49,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "peso-muerto-kb",
+    type: "fuerza",
     name: "Peso muerto rumano con kettlebell",
     bodyParts: ["piernas", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -52,6 +58,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "peso-muerto-una-pierna-kb",
+    type: "movilidad-equilibrio",
     name: "Peso muerto a una pierna con kettlebell",
     bodyParts: ["piernas", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -60,6 +67,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "puente-gluteo",
+    type: "fuerza",
     name: "Puente de glúteo",
     bodyParts: ["piernas", "core"],
     equipment: ["ninguno"],
@@ -68,6 +76,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "puente-gluteo-kb",
+    type: "fuerza",
     name: "Puente de glúteo con kettlebell",
     bodyParts: ["piernas", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -76,6 +85,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sentadilla-bulgara",
+    type: "movilidad-equilibrio",
     name: "Sentadilla búlgara (pie atrás elevado)",
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
@@ -84,6 +94,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sentadilla-salto",
+    type: "pliometrico",
     name: "Sentadilla con salto",
     bodyParts: ["piernas", "cardio"],
     equipment: ["ninguno"],
@@ -92,6 +103,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sentadilla-sumo-kb",
+    type: "fuerza",
     name: "Sentadilla sumo con kettlebell",
     bodyParts: ["piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -100,6 +112,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "step-up-kb",
+    type: "movilidad-equilibrio",
     name: "Step up con kettlebell",
     bodyParts: ["piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -108,6 +121,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "swing-kb",
+    type: "cardio-metabolico",
     name: "Kettlebell swing",
     bodyParts: ["piernas", "cardio", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -116,6 +130,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "wall-sit",
+    type: "isometrico",
     name: "Wall sit (silla contra la pared)",
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
@@ -124,6 +139,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "calf-raise",
+    type: "fuerza",
     name: "Elevación de talones (pantorrilla)",
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
@@ -134,6 +150,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- ESPALDA ----------
   {
     id: "superman",
+    type: "isometrico",
     name: "Superman",
     bodyParts: ["espalda", "core"],
     equipment: ["ninguno"],
@@ -142,6 +159,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "remo-kb-una-mano",
+    type: "fuerza",
     name: "Remo con kettlebell a una mano",
     bodyParts: ["espalda", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -150,6 +168,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "remo-kb-doble",
+    type: "fuerza",
     name: "Remo con dos kettlebells (o una en el centro)",
     bodyParts: ["espalda", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -158,6 +177,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "peso-muerto-kb-espalda",
+    type: "fuerza",
     name: "Peso muerto con kettlebell",
     bodyParts: ["espalda", "piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -166,6 +186,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "good-morning-kb",
+    type: "fuerza",
     name: "Good morning con kettlebell",
     bodyParts: ["espalda", "piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -174,6 +195,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "extension-espalda",
+    type: "isometrico",
     name: "Extensión de espalda baja",
     bodyParts: ["espalda", "core"],
     equipment: ["ninguno"],
@@ -182,6 +204,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "perro-pajaro",
+    type: "movilidad-equilibrio",
     name: "Bird dog (perro de caza)",
     bodyParts: ["espalda", "core"],
     equipment: ["ninguno"],
@@ -190,6 +213,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "pull-apart-imaginario",
+    type: "isometrico",
     name: "Pull-apart isométrico de espalda alta",
     bodyParts: ["espalda"],
     equipment: ["ninguno"],
@@ -198,6 +222,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "renegade-row-kb",
+    type: "movilidad-equilibrio",
     name: "Renegade row con kettlebell",
     bodyParts: ["espalda", "core", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -208,6 +233,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- PECHO ----------
   {
     id: "flexion-estandar",
+    type: "fuerza",
     name: "Flexión de pecho estándar",
     bodyParts: ["pecho", "brazos", "core"],
     equipment: ["ninguno"],
@@ -216,6 +242,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "flexion-rodillas",
+    type: "fuerza",
     name: "Flexión con rodillas apoyadas",
     bodyParts: ["pecho", "brazos"],
     equipment: ["ninguno"],
@@ -224,6 +251,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "flexion-diamante",
+    type: "fuerza",
     name: "Flexión diamante",
     bodyParts: ["pecho", "brazos"],
     equipment: ["ninguno"],
@@ -232,6 +260,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "flexion-amplia",
+    type: "fuerza",
     name: "Flexión con manos amplias",
     bodyParts: ["pecho"],
     equipment: ["ninguno"],
@@ -240,6 +269,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "flexion-declinada",
+    type: "fuerza",
     name: "Flexión declinada (pies elevados)",
     bodyParts: ["pecho", "brazos"],
     equipment: ["ninguno"],
@@ -248,6 +278,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "press-pecho-kb",
+    type: "fuerza",
     name: "Press de pecho con kettlebell en el suelo",
     bodyParts: ["pecho", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -256,6 +287,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "pullover-kb",
+    type: "fuerza",
     name: "Pullover con kettlebell",
     bodyParts: ["pecho", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -264,6 +296,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "flexion-explosiva",
+    type: "pliometrico",
     name: "Flexión explosiva (aplauso opcional)",
     bodyParts: ["pecho", "brazos", "cardio"],
     equipment: ["ninguno"],
@@ -272,6 +305,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "plancha-desplazamiento",
+    type: "movilidad-equilibrio",
     name: "Plancha con desplazamiento lateral (walk out)",
     bodyParts: ["pecho", "core", "brazos"],
     equipment: ["ninguno"],
@@ -282,6 +316,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- CORE ----------
   {
     id: "plancha",
+    type: "isometrico",
     name: "Plancha abdominal",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -290,6 +325,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "plancha-lateral",
+    type: "isometrico",
     name: "Plancha lateral",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -298,6 +334,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "abdominal-bicicleta",
+    type: "fuerza",
     name: "Abdominal bicicleta",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -306,6 +343,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "elevacion-piernas",
+    type: "fuerza",
     name: "Elevación de piernas",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -314,6 +352,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "mountain-climber",
+    type: "cardio-metabolico",
     name: "Mountain climbers",
     bodyParts: ["core", "cardio"],
     equipment: ["ninguno"],
@@ -322,6 +361,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "russian-twist-kb",
+    type: "fuerza",
     name: "Russian twist con kettlebell",
     bodyParts: ["core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -330,6 +370,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "v-ups",
+    type: "fuerza",
     name: "V-ups",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -338,6 +379,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "dead-bug",
+    type: "movilidad-equilibrio",
     name: "Dead bug",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -346,6 +388,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "plancha-toques-hombro",
+    type: "isometrico",
     name: "Plancha con toques al hombro",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -354,6 +397,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-halo",
+    type: "movilidad-equilibrio",
     name: "Kettlebell halo",
     bodyParts: ["core", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -362,6 +406,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sit-up",
+    type: "fuerza",
     name: "Abdominal sit-up",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -370,6 +415,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "hollow-hold",
+    type: "isometrico",
     name: "Hollow body hold",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -380,6 +426,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- BRAZOS ----------
   {
     id: "curl-biceps-kb",
+    type: "fuerza",
     name: "Curl de bíceps con kettlebell",
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -388,6 +435,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "press-hombro-kb",
+    type: "fuerza",
     name: "Press de hombro con kettlebell",
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -396,6 +444,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "triceps-extension-kb",
+    type: "fuerza",
     name: "Extensión de tríceps con kettlebell",
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -404,6 +453,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "fondos-triceps",
+    type: "fuerza",
     name: "Fondos de tríceps en silla",
     bodyParts: ["brazos"],
     equipment: ["ninguno"],
@@ -412,6 +462,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "elevacion-lateral-kb",
+    type: "fuerza",
     name: "Elevación lateral con kettlebell",
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -420,6 +471,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "curl-martillo-kb",
+    type: "fuerza",
     name: "Curl martillo con kettlebell",
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -428,6 +480,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "arm-circles",
+    type: "movilidad-equilibrio",
     name: "Círculos de brazos",
     bodyParts: ["brazos"],
     equipment: ["ninguno"],
@@ -436,6 +489,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "plancha-arriba-abajo",
+    type: "fuerza",
     name: "Plancha arriba-abajo (plank up-down)",
     bodyParts: ["brazos", "core"],
     equipment: ["ninguno"],
@@ -446,6 +500,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- FULL BODY ----------
   {
     id: "burpee",
+    type: "cardio-metabolico",
     name: "Burpee",
     bodyParts: ["full-body", "cardio"],
     equipment: ["ninguno"],
@@ -454,6 +509,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "burpee-sin-salto",
+    type: "cardio-metabolico",
     name: "Burpee sin salto",
     bodyParts: ["full-body", "cardio"],
     equipment: ["ninguno"],
@@ -462,6 +518,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-clean",
+    type: "pliometrico",
     name: "Kettlebell clean (cargada)",
     bodyParts: ["full-body", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -470,6 +527,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-snatch",
+    type: "pliometrico",
     name: "Kettlebell snatch (una mano)",
     bodyParts: ["full-body", "cardio"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -478,6 +536,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-clean-and-press",
+    type: "pliometrico",
     name: "Clean and press con kettlebell",
     bodyParts: ["full-body", "brazos", "piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -486,6 +545,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-thruster",
+    type: "pliometrico",
     name: "Kettlebell thruster",
     bodyParts: ["full-body", "piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -494,6 +554,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-turkish-getup",
+    type: "movilidad-equilibrio",
     name: "Turkish get-up con kettlebell",
     bodyParts: ["full-body", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -502,6 +563,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "jumping-jacks",
+    type: "cardio-metabolico",
     name: "Jumping jacks",
     bodyParts: ["full-body", "cardio"],
     equipment: ["ninguno"],
@@ -510,6 +572,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "oso-crawl",
+    type: "movilidad-equilibrio",
     name: "Bear crawl (gateo de oso)",
     bodyParts: ["full-body", "core"],
     equipment: ["ninguno"],
@@ -518,6 +581,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-swing-una-mano",
+    type: "cardio-metabolico",
     name: "Kettlebell swing a una mano",
     bodyParts: ["full-body", "cardio", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -528,6 +592,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- CARDIO / HIIT ----------
   {
     id: "high-knees",
+    type: "cardio-metabolico",
     name: "High knees (rodillas altas)",
     bodyParts: ["cardio", "piernas"],
     equipment: ["ninguno"],
@@ -536,6 +601,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "skater-jump",
+    type: "pliometrico",
     name: "Skater jumps (saltos laterales)",
     bodyParts: ["cardio", "piernas"],
     equipment: ["ninguno"],
@@ -544,6 +610,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sentadilla-salto-tuck",
+    type: "pliometrico",
     name: "Tuck jump (salto con rodillas al pecho)",
     bodyParts: ["cardio", "piernas"],
     equipment: ["ninguno"],
@@ -552,6 +619,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "shadow-boxing",
+    type: "cardio-metabolico",
     name: "Shadow boxing (sombra de boxeo)",
     bodyParts: ["cardio", "brazos", "core"],
     equipment: ["ninguno"],
@@ -560,6 +628,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sprint-en-lugar",
+    type: "cardio-metabolico",
     name: "Sprint en el lugar",
     bodyParts: ["cardio"],
     equipment: ["ninguno"],
@@ -568,6 +637,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "plank-jack",
+    type: "cardio-metabolico",
     name: "Plank jacks",
     bodyParts: ["cardio", "core"],
     equipment: ["ninguno"],
@@ -576,11 +646,139 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-swing-cardio",
+    type: "cardio-metabolico",
     name: "Kettlebell swing continuo",
     bodyParts: ["cardio", "piernas", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
       "Realiza swings de kettlebell de forma continua a ritmo constante para elevar la frecuencia cardíaca.",
+  },
+
+  // ---------- MOVILIDAD / EQUILIBRIO ----------
+  {
+    id: "movilidad-cadera-90-90",
+    type: "movilidad-equilibrio",
+    name: "Movilidad de cadera 90/90",
+    bodyParts: ["piernas", "core"],
+    equipment: ["ninguno"],
+    instructions:
+      "Sentado con ambas piernas dobladas a 90° (una hacia adelante, otra hacia atrás), rota de un lado a otro manteniendo el torso erguido.",
+  },
+  {
+    id: "estiramiento-mundial",
+    type: "movilidad-equilibrio",
+    name: "World's greatest stretch",
+    bodyParts: ["full-body", "piernas"],
+    equipment: ["ninguno"],
+    instructions:
+      "Desde zancada profunda, apoya la mano contraria en el suelo y rota el torso llevando el otro brazo hacia el techo, alterna lados.",
+  },
+  {
+    id: "equilibrio-una-pierna",
+    type: "movilidad-equilibrio",
+    name: "Equilibrio a una pierna con alcance",
+    bodyParts: ["piernas", "core"],
+    equipment: ["ninguno"],
+    instructions:
+      "De pie sobre una pierna, inclina el torso y alcanza el suelo con la mano contraria manteniendo el equilibrio, vuelve arriba y repite.",
+  },
+  {
+    id: "gato-camello",
+    type: "movilidad-equilibrio",
+    name: "Gato-camello",
+    bodyParts: ["espalda", "core"],
+    equipment: ["ninguno"],
+    instructions:
+      "En cuadrupedia, alterna entre arquear la espalda hacia arriba (gato) y hundirla hacia abajo (camello) de forma controlada.",
+  },
+  {
+    id: "rotacion-toracica",
+    type: "movilidad-equilibrio",
+    name: "Rotación torácica en cuadrupedia",
+    bodyParts: ["espalda", "core"],
+    equipment: ["ninguno"],
+    instructions:
+      "En cuadrupedia con una mano detrás de la cabeza, rota el torso llevando el codo hacia el techo y luego hacia adentro, alterna lados.",
+  },
+  {
+    id: "circulos-cadera",
+    type: "movilidad-equilibrio",
+    name: "Círculos de cadera",
+    bodyParts: ["piernas", "core"],
+    equipment: ["ninguno"],
+    instructions:
+      "De pie con manos en la cintura, realiza círculos amplios con la cadera en ambas direcciones.",
+  },
+
+  // ---------- ISOMÉTRICO ----------
+  {
+    id: "sumo-isometrico",
+    type: "isometrico",
+    name: "Sentadilla sumo isométrica",
+    bodyParts: ["piernas"],
+    equipment: ["ninguno"],
+    instructions:
+      "Pies bien separados apuntando afuera, baja a la posición más profunda de sentadilla sumo y mantén sin moverte.",
+  },
+  {
+    id: "superman-hold",
+    type: "isometrico",
+    name: "Superman mantenido",
+    bodyParts: ["espalda", "core"],
+    equipment: ["ninguno"],
+    instructions:
+      "Acostado boca abajo, eleva brazos, pecho y piernas del suelo y mantén la posición sin bajar durante todo el tiempo indicado.",
+  },
+  {
+    id: "flexion-isometrica",
+    type: "isometrico",
+    name: "Flexión isométrica a media bajada",
+    bodyParts: ["pecho", "brazos"],
+    equipment: ["ninguno"],
+    instructions:
+      "Baja a la mitad de una flexión de pecho y mantén esa posición sin subir ni bajar más.",
+  },
+
+  // ---------- PLIOMÉTRICO ----------
+  {
+    id: "salto-unilateral",
+    type: "pliometrico",
+    name: "Salto unilateral (bound)",
+    bodyParts: ["piernas", "cardio"],
+    equipment: ["ninguno"],
+    instructions:
+      "Sobre una pierna, salta hacia adelante lo más lejos posible y aterriza controlado sobre la misma pierna, alterna lados.",
+  },
+  {
+    id: "salto-lateral-continuo",
+    type: "pliometrico",
+    name: "Saltos laterales continuos",
+    bodyParts: ["piernas", "cardio"],
+    equipment: ["ninguno"],
+    instructions:
+      "Salta rápidamente de un lado a otro sobre una línea imaginaria en el suelo, manteniendo los pies juntos.",
+  },
+
+  // ---------- CARDIO METABÓLICO ----------
+  {
+    id: "sprint-lateral",
+    type: "cardio-metabolico",
+    name: "Sprint lateral (shuffle)",
+    bodyParts: ["cardio", "piernas"],
+    equipment: ["ninguno"],
+    instructions:
+      "Desplázate rápidamente de lado a lado con pasos cortos y rápidos, manteniendo las rodillas semiflexionadas.",
+  },
+
+  // ---------- FUERZA (carga cargada) ----------
+  {
+    id: "farmer-carry-kb",
+    type: "fuerza",
+    name: "Farmer's carry con kettlebell",
+    bodyParts: ["full-body", "brazos", "core"],
+    equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
+    instructions:
+      "Sostén la kettlebell a un lado del cuerpo y camina en el lugar o en línea recta manteniendo el torso erguido y el core firme.",
   },
 ];
 
