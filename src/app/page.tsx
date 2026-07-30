@@ -24,7 +24,7 @@ type EquipmentFilter = "todos" | "sin-equipo" | "con-kettlebell";
 
 export default function Home() {
   const [bodyPart, setBodyPart] = useState<BodyPart | "todos">("todos");
-  const [difficulty, setDifficulty] = useState<Difficulty | "todos">("todos");
+  const [difficulty, setDifficulty] = useState<Difficulty | "todos">("intermedio");
   const [equipment, setEquipment] = useState<EquipmentFilter>("todos");
   const [type, setType] = useState<ExerciseType | "todos">("todos");
   const [weekday, setWeekday] = useState<number | null>(null);

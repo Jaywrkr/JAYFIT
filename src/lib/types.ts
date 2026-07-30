@@ -5,7 +5,9 @@ export type BodyPart =
   | "core"
   | "brazos"
   | "full-body"
-  | "cardio";
+  | "cardio"
+  | "portero"
+  | "muay-thai";
 
 export type Difficulty =
   | "principiante"
@@ -58,6 +60,8 @@ export const BODY_PART_LABELS: Record<BodyPart, string> = {
   brazos: "Brazos",
   "full-body": "Full Body",
   cardio: "Cardio / HIIT",
+  portero: "Portero",
+  "muay-thai": "Muay Thai",
 };
 
 export const DIFFICULTY_LABELS: Record<Difficulty, string> = {
