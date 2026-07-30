@@ -4,6 +4,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- PIERNAS ----------
   {
     id: "sentadilla-bw",
+    pose: "squat",
     name: "Sentadilla con peso corporal",
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
@@ -12,6 +13,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sentadilla-goblet",
+    pose: "squat",
     name: "Sentadilla goblet con kettlebell",
     bodyParts: ["piernas", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -20,6 +22,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "zancada-alterna",
+    pose: "lunge",
     name: "Zancada alterna",
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
@@ -28,6 +31,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "zancada-kb",
+    pose: "lunge",
     name: "Zancada con kettlebell en goblet",
     bodyParts: ["piernas", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -36,6 +40,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "zancada-lateral",
+    pose: "lunge",
     name: "Zancada lateral",
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
@@ -44,6 +49,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "peso-muerto-kb",
+    pose: "hinge",
     name: "Peso muerto rumano con kettlebell",
     bodyParts: ["piernas", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -52,6 +58,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "peso-muerto-una-pierna-kb",
+    pose: "hinge",
     name: "Peso muerto a una pierna con kettlebell",
     bodyParts: ["piernas", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -60,6 +67,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "puente-gluteo",
+    pose: "hinge",
     name: "Puente de glúteo",
     bodyParts: ["piernas", "core"],
     equipment: ["ninguno"],
@@ -68,6 +76,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "puente-gluteo-kb",
+    pose: "hinge",
     name: "Puente de glúteo con kettlebell",
     bodyParts: ["piernas", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -76,6 +85,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sentadilla-bulgara",
+    pose: "lunge",
     name: "Sentadilla búlgara (pie atrás elevado)",
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
@@ -84,6 +94,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sentadilla-salto",
+    pose: "squat",
     name: "Sentadilla con salto",
     bodyParts: ["piernas", "cardio"],
     equipment: ["ninguno"],
@@ -92,6 +103,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sentadilla-sumo-kb",
+    pose: "squat",
     name: "Sentadilla sumo con kettlebell",
     bodyParts: ["piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -100,6 +112,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "step-up-kb",
+    pose: "lunge",
     name: "Step up con kettlebell",
     bodyParts: ["piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -108,6 +121,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "swing-kb",
+    pose: "hinge",
     name: "Kettlebell swing",
     bodyParts: ["piernas", "cardio", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -116,6 +130,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "wall-sit",
+    pose: "squat",
     name: "Wall sit (silla contra la pared)",
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
@@ -124,6 +139,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "calf-raise",
+    pose: "squat",
     name: "Elevación de talones (pantorrilla)",
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
@@ -134,6 +150,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- ESPALDA ----------
   {
     id: "superman",
+    pose: "plank",
     name: "Superman",
     bodyParts: ["espalda", "core"],
     equipment: ["ninguno"],
@@ -142,6 +159,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "remo-kb-una-mano",
+    pose: "row",
     name: "Remo con kettlebell a una mano",
     bodyParts: ["espalda", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -150,6 +168,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "remo-kb-doble",
+    pose: "row",
     name: "Remo con dos kettlebells (o una en el centro)",
     bodyParts: ["espalda", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -158,6 +177,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "peso-muerto-kb-espalda",
+    pose: "hinge",
     name: "Peso muerto con kettlebell",
     bodyParts: ["espalda", "piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -166,6 +186,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "good-morning-kb",
+    pose: "hinge",
     name: "Good morning con kettlebell",
     bodyParts: ["espalda", "piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -174,6 +195,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "extension-espalda",
+    pose: "plank",
     name: "Extensión de espalda baja",
     bodyParts: ["espalda", "core"],
     equipment: ["ninguno"],
@@ -182,6 +204,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "perro-pajaro",
+    pose: "plank",
     name: "Bird dog (perro de caza)",
     bodyParts: ["espalda", "core"],
     equipment: ["ninguno"],
@@ -190,6 +213,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "pull-apart-imaginario",
+    pose: "row",
     name: "Pull-apart isométrico de espalda alta",
     bodyParts: ["espalda"],
     equipment: ["ninguno"],
@@ -198,6 +222,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "renegade-row-kb",
+    pose: "row",
     name: "Renegade row con kettlebell",
     bodyParts: ["espalda", "core", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -208,6 +233,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- PECHO ----------
   {
     id: "flexion-estandar",
+    pose: "pushup",
     name: "Flexión de pecho estándar",
     bodyParts: ["pecho", "brazos", "core"],
     equipment: ["ninguno"],
@@ -216,6 +242,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "flexion-rodillas",
+    pose: "pushup",
     name: "Flexión con rodillas apoyadas",
     bodyParts: ["pecho", "brazos"],
     equipment: ["ninguno"],
@@ -224,6 +251,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "flexion-diamante",
+    pose: "pushup",
     name: "Flexión diamante",
     bodyParts: ["pecho", "brazos"],
     equipment: ["ninguno"],
@@ -232,6 +260,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "flexion-amplia",
+    pose: "pushup",
     name: "Flexión con manos amplias",
     bodyParts: ["pecho"],
     equipment: ["ninguno"],
@@ -240,6 +269,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "flexion-declinada",
+    pose: "pushup",
     name: "Flexión declinada (pies elevados)",
     bodyParts: ["pecho", "brazos"],
     equipment: ["ninguno"],
@@ -248,6 +278,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "press-pecho-kb",
+    pose: "press",
     name: "Press de pecho con kettlebell en el suelo",
     bodyParts: ["pecho", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -256,6 +287,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "pullover-kb",
+    pose: "press",
     name: "Pullover con kettlebell",
     bodyParts: ["pecho", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -264,6 +296,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "flexion-explosiva",
+    pose: "pushup",
     name: "Flexión explosiva (aplauso opcional)",
     bodyParts: ["pecho", "brazos", "cardio"],
     equipment: ["ninguno"],
@@ -272,6 +305,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "plancha-desplazamiento",
+    pose: "plank",
     name: "Plancha con desplazamiento lateral (walk out)",
     bodyParts: ["pecho", "core", "brazos"],
     equipment: ["ninguno"],
@@ -282,6 +316,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- CORE ----------
   {
     id: "plancha",
+    pose: "plank",
     name: "Plancha abdominal",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -290,6 +325,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "plancha-lateral",
+    pose: "plank",
     name: "Plancha lateral",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -298,6 +334,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "abdominal-bicicleta",
+    pose: "twist",
     name: "Abdominal bicicleta",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -306,6 +343,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "elevacion-piernas",
+    pose: "plank",
     name: "Elevación de piernas",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -314,6 +352,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "mountain-climber",
+    pose: "cardio",
     name: "Mountain climbers",
     bodyParts: ["core", "cardio"],
     equipment: ["ninguno"],
@@ -322,6 +361,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "russian-twist-kb",
+    pose: "twist",
     name: "Russian twist con kettlebell",
     bodyParts: ["core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -330,6 +370,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "v-ups",
+    pose: "twist",
     name: "V-ups",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -338,6 +379,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "dead-bug",
+    pose: "plank",
     name: "Dead bug",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -346,6 +388,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "plancha-toques-hombro",
+    pose: "plank",
     name: "Plancha con toques al hombro",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -354,6 +397,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-halo",
+    pose: "twist",
     name: "Kettlebell halo",
     bodyParts: ["core", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -362,6 +406,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sit-up",
+    pose: "twist",
     name: "Abdominal sit-up",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -370,6 +415,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "hollow-hold",
+    pose: "plank",
     name: "Hollow body hold",
     bodyParts: ["core"],
     equipment: ["ninguno"],
@@ -380,6 +426,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- BRAZOS ----------
   {
     id: "curl-biceps-kb",
+    pose: "curl",
     name: "Curl de bíceps con kettlebell",
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -388,6 +435,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "press-hombro-kb",
+    pose: "press",
     name: "Press de hombro con kettlebell",
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -396,6 +444,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "triceps-extension-kb",
+    pose: "press",
     name: "Extensión de tríceps con kettlebell",
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -404,6 +453,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "fondos-triceps",
+    pose: "press",
     name: "Fondos de tríceps en silla",
     bodyParts: ["brazos"],
     equipment: ["ninguno"],
@@ -412,6 +462,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "elevacion-lateral-kb",
+    pose: "press",
     name: "Elevación lateral con kettlebell",
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -420,6 +471,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "curl-martillo-kb",
+    pose: "curl",
     name: "Curl martillo con kettlebell",
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -428,6 +480,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "arm-circles",
+    pose: "curl",
     name: "Círculos de brazos",
     bodyParts: ["brazos"],
     equipment: ["ninguno"],
@@ -436,6 +489,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "plancha-arriba-abajo",
+    pose: "plank",
     name: "Plancha arriba-abajo (plank up-down)",
     bodyParts: ["brazos", "core"],
     equipment: ["ninguno"],
@@ -446,6 +500,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- FULL BODY ----------
   {
     id: "burpee",
+    pose: "jump",
     name: "Burpee",
     bodyParts: ["full-body", "cardio"],
     equipment: ["ninguno"],
@@ -454,6 +509,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "burpee-sin-salto",
+    pose: "squat",
     name: "Burpee sin salto",
     bodyParts: ["full-body", "cardio"],
     equipment: ["ninguno"],
@@ -462,6 +518,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-clean",
+    pose: "hinge",
     name: "Kettlebell clean (cargada)",
     bodyParts: ["full-body", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -470,6 +527,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-snatch",
+    pose: "hinge",
     name: "Kettlebell snatch (una mano)",
     bodyParts: ["full-body", "cardio"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -478,6 +536,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-clean-and-press",
+    pose: "hinge",
     name: "Clean and press con kettlebell",
     bodyParts: ["full-body", "brazos", "piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -486,6 +545,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-thruster",
+    pose: "squat",
     name: "Kettlebell thruster",
     bodyParts: ["full-body", "piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -494,6 +554,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-turkish-getup",
+    pose: "carry",
     name: "Turkish get-up con kettlebell",
     bodyParts: ["full-body", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -502,6 +563,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "jumping-jacks",
+    pose: "cardio",
     name: "Jumping jacks",
     bodyParts: ["full-body", "cardio"],
     equipment: ["ninguno"],
@@ -510,6 +572,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "oso-crawl",
+    pose: "carry",
     name: "Bear crawl (gateo de oso)",
     bodyParts: ["full-body", "core"],
     equipment: ["ninguno"],
@@ -518,6 +581,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-swing-una-mano",
+    pose: "hinge",
     name: "Kettlebell swing a una mano",
     bodyParts: ["full-body", "cardio", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
@@ -528,6 +592,7 @@ export const EXERCISES: Exercise[] = [
   // ---------- CARDIO / HIIT ----------
   {
     id: "high-knees",
+    pose: "cardio",
     name: "High knees (rodillas altas)",
     bodyParts: ["cardio", "piernas"],
     equipment: ["ninguno"],
@@ -536,6 +601,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "skater-jump",
+    pose: "jump",
     name: "Skater jumps (saltos laterales)",
     bodyParts: ["cardio", "piernas"],
     equipment: ["ninguno"],
@@ -544,6 +610,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sentadilla-salto-tuck",
+    pose: "jump",
     name: "Tuck jump (salto con rodillas al pecho)",
     bodyParts: ["cardio", "piernas"],
     equipment: ["ninguno"],
@@ -552,6 +619,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "shadow-boxing",
+    pose: "cardio",
     name: "Shadow boxing (sombra de boxeo)",
     bodyParts: ["cardio", "brazos", "core"],
     equipment: ["ninguno"],
@@ -560,6 +628,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "sprint-en-lugar",
+    pose: "cardio",
     name: "Sprint en el lugar",
     bodyParts: ["cardio"],
     equipment: ["ninguno"],
@@ -568,6 +637,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "plank-jack",
+    pose: "plank",
     name: "Plank jacks",
     bodyParts: ["cardio", "core"],
     equipment: ["ninguno"],
@@ -576,6 +646,7 @@ export const EXERCISES: Exercise[] = [
   },
   {
     id: "kb-swing-cardio",
+    pose: "hinge",
     name: "Kettlebell swing continuo",
     bodyParts: ["cardio", "piernas", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],

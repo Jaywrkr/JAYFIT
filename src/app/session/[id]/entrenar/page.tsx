@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { getSessionById } from "@/lib/sessions";
 import { getExerciseById } from "@/lib/exercises";
 import { buildSteps } from "@/lib/workout";
+import { StickFigure } from "@/components/StickFigure";
 
 export default function TrainPage() {
   const params = useParams<{ id: string }>();
@@ -14,12 +15,15 @@ export default function TrainPage() {
 
   const steps = useMemo(() => (session ? buildSteps(session) : []), [session]);
 
-  const [stepIndex, setStepIndex] = useState(0);
-  const [secondsLeft, setSecondsLeft] = useState(steps[0]?.seconds ?? 0);
+  const [progress, setProgress] = useState({
+    index: 0,
+    seconds: steps[0]?.seconds ?? 0,
+  });
   const [paused, setPaused] = useState(false);
   const [finished, setFinished] = useState(false);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  const stepIndex = progress.index;
+  const secondsLeft = progress.seconds;
   const step = steps[stepIndex];
   const nextStep = steps[stepIndex + 1];
   const exercise = step?.exerciseId ? getExerciseById(step.exerciseId) : undefined;
@@ -28,27 +32,21 @@ export default function TrainPage() {
     : undefined;
 
   useEffect(() => {
-    setSecondsLeft(steps[stepIndex]?.seconds ?? 0);
-  }, [stepIndex, steps]);
-
-  useEffect(() => {
     if (paused || finished || !step) return;
-    intervalRef.current = setInterval(() => {
-      setSecondsLeft((s) => s - 1);
+    const id = setInterval(() => {
+      setProgress((p) => {
+        if (p.seconds > 1) return { index: p.index, seconds: p.seconds - 1 };
+        return { index: p.index + 1, seconds: steps[p.index + 1]?.seconds ?? 0 };
+      });
     }, 1000);
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [paused, finished, step]);
+    return () => clearInterval(id);
+  }, [paused, finished, step, steps]);
 
   useEffect(() => {
-    if (secondsLeft > 0 || !step) return;
-    if (stepIndex + 1 >= steps.length) {
+    if (stepIndex >= steps.length && steps.length > 0) {
       setFinished(true);
-      return;
     }
-    setStepIndex((i) => i + 1);
-  }, [secondsLeft, step, stepIndex, steps.length]);
+  }, [stepIndex, steps.length]);
 
   if (!session) {
     return (
@@ -72,7 +70,7 @@ export default function TrainPage() {
           <Link
             href={`/session/${session.id}/entrenar`}
             onClick={() => {
-              setStepIndex(0);
+              setProgress({ index: 0, seconds: steps[0]?.seconds ?? 0 });
               setFinished(false);
             }}
             className="rounded-full bg-black px-6 py-3.5 text-center text-base font-semibold text-white dark:bg-white dark:text-black"
@@ -94,13 +92,14 @@ export default function TrainPage() {
 
   const isRest = step.kind === "rest";
   const isPrepare = step.kind === "prepare";
-  const progress = ((stepIndex + 1) / steps.length) * 100;
+  const progressPercent = ((stepIndex + 1) / steps.length) * 100;
 
   function skip() {
-    if (stepIndex + 1 >= steps.length) {
+    const nextIndex = stepIndex + 1;
+    if (nextIndex >= steps.length) {
       setFinished(true);
     } else {
-      setStepIndex((i) => i + 1);
+      setProgress({ index: nextIndex, seconds: steps[nextIndex].seconds });
     }
   }
 
@@ -122,7 +121,7 @@ export default function TrainPage() {
         <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-black/10 dark:bg-white/15">
           <div
             className="h-full rounded-full bg-black transition-all dark:bg-white"
-            style={{ width: `${progress}%` }}
+            style={{ width: `${progressPercent}%` }}
           />
         </div>
       </div>
@@ -151,6 +150,11 @@ export default function TrainPage() {
             <h1 className="text-3xl font-black leading-tight">
               {exercise?.name}
             </h1>
+            {exercise && (
+              <div className="h-28 w-28 text-black/80 dark:text-white/80">
+                <StickFigure pose={exercise.pose} />
+              </div>
+            )}
             {step.reps && (
               <p className="text-lg font-medium text-black/60 dark:text-white/60">
                 {step.reps} repeticiones

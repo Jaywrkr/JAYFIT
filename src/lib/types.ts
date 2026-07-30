@@ -15,12 +15,27 @@ export type Difficulty =
 
 export type Equipment = "ninguno" | "kb-10kg" | "kb-15lb" | "kb-10lb";
 
+export type ExercisePose =
+  | "squat"
+  | "lunge"
+  | "hinge"
+  | "pushup"
+  | "plank"
+  | "press"
+  | "curl"
+  | "row"
+  | "jump"
+  | "twist"
+  | "carry"
+  | "cardio";
+
 export interface Exercise {
   id: string;
   name: string;
   bodyParts: BodyPart[];
   equipment: Equipment[];
   instructions: string;
+  pose: ExercisePose;
 }
 
 export interface SessionBlock {

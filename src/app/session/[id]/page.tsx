@@ -9,6 +9,7 @@ import {
 } from "@/lib/types";
 import { estimateSessionSeconds, formatMinutes } from "@/lib/workout";
 import { Badge } from "@/components/Badge";
+import { StickFigure } from "@/components/StickFigure";
 
 export function generateStaticParams() {
   return SESSIONS.map((s) => ({ id: s.id }));
@@ -65,18 +66,23 @@ export default async function SessionPage({
             const exercise = getExerciseById(block.exerciseId);
             if (!exercise) return null;
             return (
-              <li key={i} className="flex flex-col gap-1 py-4">
-                <div className="flex items-baseline justify-between gap-2">
-                  <span className="font-semibold">
-                    {i + 1}. {exercise.name}
-                  </span>
-                  <span className="shrink-0 text-sm text-black/50 dark:text-white/50">
-                    {block.sets} × {block.reps ? `${block.reps} reps` : `${block.workSeconds}s`}
-                  </span>
+              <li key={i} className="flex items-start gap-4 py-4">
+                <div className="h-14 w-14 shrink-0 text-black/80 dark:text-white/80">
+                  <StickFigure pose={exercise.pose} />
                 </div>
-                <p className="text-sm text-black/60 dark:text-white/60">
-                  {exercise.instructions}
-                </p>
+                <div className="flex flex-1 flex-col gap-1">
+                  <div className="flex items-baseline justify-between gap-2">
+                    <span className="font-semibold">
+                      {i + 1}. {exercise.name}
+                    </span>
+                    <span className="shrink-0 text-sm text-black/50 dark:text-white/50">
+                      {block.sets} × {block.reps ? `${block.reps} reps` : `${block.workSeconds}s`}
+                    </span>
+                  </div>
+                  <p className="text-sm text-black/60 dark:text-white/60">
+                    {exercise.instructions}
+                  </p>
+                </div>
               </li>
             );
           })}
