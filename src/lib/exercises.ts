@@ -9,7 +9,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
     instructions:
-      "Pies al ancho de hombros, baja flexionando rodillas y cadera como si te sentaras, pecho arriba, sube empujando por los talones.",
+      "Párate con los pies al ancho de los hombros. Baja flexionando rodillas y cadera como si fueras a sentarte en una silla, manteniendo el pecho arriba y el peso en los talones. Sube empujando el suelo con los talones hasta quedar de pie.",
   },
   {
     id: "sentadilla-goblet",
@@ -18,7 +18,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Sostén la kettlebell contra el pecho con ambas manos, baja en sentadilla manteniendo el torso erguido, sube empujando el suelo.",
+      "Sostén la kettlebell verticalmente contra el pecho, con ambas manos bajo el asa. Baja en sentadilla manteniendo el torso erguido y los codos apuntando hacia las rodillas. Sube empujando el suelo con los talones.",
   },
   {
     id: "zancada-alterna",
@@ -27,7 +27,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
     instructions:
-      "Da un paso largo hacia adelante, baja hasta que ambas rodillas formen 90°, vuelve al centro y alterna la pierna.",
+      "De pie, da un paso largo hacia adelante. Baja el cuerpo hasta que ambas rodillas formen un ángulo de 90° (la rodilla de atrás casi toca el suelo). Empuja con la pierna de adelante para volver a la posición inicial y repite con la otra pierna.",
   },
   {
     id: "zancada-kb",
@@ -36,7 +36,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Sostén la kettlebell frente al pecho y realiza zancadas alternas manteniendo el torso vertical.",
+      "Sostén la kettlebell contra el pecho como en la sentadilla goblet. Da zancadas alternas hacia adelante manteniendo el torso vertical y el core firme durante todo el movimiento.",
   },
   {
     id: "zancada-lateral",
@@ -45,7 +45,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
     instructions:
-      "Da un paso amplio hacia un lado, flexiona esa rodilla manteniendo la otra pierna extendida, vuelve al centro y alterna.",
+      "De pie, da un paso amplio hacia un lado. Flexiona la rodilla de esa pierna bajando la cadera hacia atrás, mientras la otra pierna queda extendida y recta. Empuja de vuelta al centro y repite hacia el otro lado.",
   },
   {
     id: "peso-muerto-kb",
@@ -54,7 +54,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Sostén la kettlebell con ambas manos frente a los muslos, empuja la cadera hacia atrás manteniendo espalda recta, baja hasta sentir el estiramiento en isquiotibiales y vuelve.",
+      "De pie, sostén la kettlebell con ambas manos frente a los muslos. Con las rodillas casi rectas, empuja la cadera hacia atrás (como cerrando una puerta con el glúteo) manteniendo la espalda recta, no encorvada. Baja hasta sentir el estiramiento en la parte de atrás del muslo y vuelve extendiendo la cadera.",
   },
   {
     id: "peso-muerto-una-pierna-kb",
@@ -63,7 +63,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Con la kettlebell en una mano, inclina el torso hacia adelante mientras levantas la pierna contraria hacia atrás, mantén el equilibrio y vuelve a la posición inicial.",
+      "De pie sobre una pierna, con la kettlebell en la mano del mismo lado. Inclina el torso hacia adelante mientras levantas la pierna libre hacia atrás en línea recta, como una balanza. Mantén el equilibrio y vuelve a la posición inicial de forma controlada.",
   },
   {
     id: "puente-gluteo",
@@ -72,7 +72,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "core"],
     equipment: ["ninguno"],
     instructions:
-      "Acostado boca arriba, rodillas flexionadas, eleva la cadera apretando glúteos hasta formar una línea recta de rodillas a hombros.",
+      "Acuéstate boca arriba con las rodillas flexionadas y los pies apoyados en el suelo. Aprieta los glúteos y eleva la cadera hasta formar una línea recta desde las rodillas hasta los hombros. Baja controlado sin dejar caer la cadera de golpe.",
   },
   {
     id: "puente-gluteo-kb",
@@ -81,7 +81,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Igual que el puente de glúteo, con la kettlebell apoyada sobre la cadera para añadir resistencia.",
+      "Igual que el puente de glúteo: acostado boca arriba con rodillas flexionadas, pero con la kettlebell apoyada sobre la cadera (sujétala con ambas manos) para añadir resistencia al elevar y bajar.",
   },
   {
     id: "sentadilla-bulgara",
@@ -90,7 +90,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
     instructions:
-      "Apoya el empeine de un pie sobre una silla o superficie elevada detrás de ti, baja en sentadilla con la pierna delantera.",
+      "De espaldas a una silla, apoya el empeine de un pie sobre el asiento. Con la otra pierna al frente, baja en sentadilla flexionando esa rodilla hasta casi 90°, y sube empujando con esa misma pierna.",
   },
   {
     id: "sentadilla-salto",
@@ -99,7 +99,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "cardio"],
     equipment: ["ninguno"],
     instructions:
-      "Baja en sentadilla y salta explosivamente hacia arriba, aterriza suave volviendo a la sentadilla.",
+      "Baja en sentadilla como en la sentadilla normal y, desde ahí, salta explosivamente hacia arriba extendiendo todo el cuerpo. Aterriza suave, doblando las rodillas, y cae directo en la siguiente sentadilla.",
   },
   {
     id: "sentadilla-sumo-kb",
@@ -108,7 +108,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Pies bien separados apuntando afuera, sostén la kettlebell con ambas manos entre las piernas, baja en sentadilla profunda.",
+      "Separa los pies más que el ancho de hombros con las puntas apuntando hacia afuera. Sostén la kettlebell con ambas manos colgando entre las piernas y baja en sentadilla profunda, manteniendo las rodillas alineadas con los pies.",
   },
   {
     id: "step-up-kb",
@@ -117,7 +117,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Sube a una superficie estable con una pierna sosteniendo la kettlebell en goblet, baja controlado y alterna.",
+      "Frente a una superficie estable (un escalón o banco), sostén la kettlebell en posición goblet contra el pecho. Sube apoyando todo el pie de una pierna sobre la superficie, sin impulsarte con la de atrás, y baja controlado. Alterna la pierna que inicia.",
   },
   {
     id: "swing-kb",
@@ -126,7 +126,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "cardio", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Pies al ancho de hombros, kettlebell entre las piernas, impulsa la cadera hacia adelante para balancear la kettlebell hasta la altura del pecho, deja que baje entre las piernas y repite.",
+      "Pies al ancho de hombros con la kettlebell en el suelo entre ellos. Toma la kettlebell y, con un movimiento de cadera (no de brazos), impúlsala hacia adelante hasta la altura del pecho. Deja que baje entre las piernas por gravedad y repite el impulso de cadera de inmediato.",
   },
   {
     id: "wall-sit",
@@ -135,7 +135,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
     instructions:
-      "Apoya la espalda en una pared y baja hasta formar 90° en las rodillas, mantén la posición isométrica.",
+      "Apoya toda la espalda contra una pared y desliza el cuerpo hacia abajo hasta que las rodillas formen 90°, como si estuvieras sentado en una silla invisible. Mantén la posición sin moverte durante todo el tiempo indicado.",
   },
   {
     id: "calf-raise",
@@ -144,7 +144,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
     instructions:
-      "De pie, sube el peso sobre las puntas de los pies elevando los talones lo más alto posible, baja controlado.",
+      "De pie, eleva los talones lo más alto posible quedando de puntillas, apretando la pantorrilla en la parte alta. Baja controlado sin dejar caer los talones de golpe.",
   },
 
   // ---------- ESPALDA ----------
@@ -155,7 +155,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["espalda", "core"],
     equipment: ["ninguno"],
     instructions:
-      "Acostado boca abajo, eleva simultáneamente brazos, pecho y piernas del suelo, mantén 1-2s y baja controlado.",
+      "Acuéstate boca abajo con brazos extendidos al frente. Eleva simultáneamente brazos, pecho y piernas del suelo, aprieta la espalda baja y los glúteos, mantén 1-2 segundos y baja controlado.",
   },
   {
     id: "remo-kb-una-mano",
@@ -164,7 +164,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["espalda", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Apoya una mano y rodilla sobre una superficie estable, con la otra mano tira de la kettlebell hacia la cadera manteniendo el codo cerca del cuerpo.",
+      "Apoya una mano y la rodilla del mismo lado sobre una banca o silla, con la espalda paralela al suelo. Con la mano libre, sostén la kettlebell y tira de ella hacia la cadera, manteniendo el codo pegado al cuerpo. Baja controlado y repite.",
   },
   {
     id: "remo-kb-doble",
@@ -173,7 +173,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["espalda", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Inclina el torso hacia adelante con espalda recta, tira de las kettlebells hacia el abdomen apretando los omóplatos, baja controlado.",
+      "De pie con una kettlebell en cada mano (o una sola, sostenida con ambas), inclina el torso hacia adelante manteniendo la espalda recta, no encorvada. Tira de la kettlebell hacia el abdomen apretando los omóplatos como si los juntaras, y baja controlado.",
   },
   {
     id: "peso-muerto-kb-espalda",
@@ -182,7 +182,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["espalda", "piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Con la kettlebell entre los pies, flexiona cadera y rodillas para tomarla, sube extendiendo cadera y rodillas con espalda neutra.",
+      "Coloca la kettlebell en el suelo entre tus pies. Flexiona cadera y rodillas para agarrarla manteniendo la espalda recta (no redondeada). Sube extendiendo cadera y rodillas al mismo tiempo hasta quedar totalmente de pie.",
   },
   {
     id: "good-morning-kb",
@@ -191,7 +191,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["espalda", "piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Con la kettlebell sostenida contra el pecho, inclina el torso hacia adelante con rodillas ligeramente flexionadas y espalda recta, vuelve a la vertical.",
+      "De pie, sostén la kettlebell contra el pecho. Con las rodillas ligeramente flexionadas y la espalda recta, inclina el torso hacia adelante desde la cadera (no desde la zona baja de la espalda) y vuelve a la posición vertical apretando los glúteos.",
   },
   {
     id: "extension-espalda",
@@ -200,7 +200,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["espalda", "core"],
     equipment: ["ninguno"],
     instructions:
-      "Acostado boca abajo con manos detrás de la cabeza o extendidas, eleva el pecho del suelo contrayendo la espalda baja.",
+      "Acuéstate boca abajo con las manos detrás de la cabeza o extendidas al frente. Eleva solo el pecho del suelo contrayendo la espalda baja, sin tirar del cuello, y baja controlado.",
   },
   {
     id: "perro-pajaro",
@@ -209,7 +209,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["espalda", "core"],
     equipment: ["ninguno"],
     instructions:
-      "En cuadrupedia, extiende brazo y pierna opuestos manteniendo la cadera estable, vuelve y alterna.",
+      "Ponte en cuadrupedia (manos bajo los hombros, rodillas bajo la cadera). Extiende al mismo tiempo un brazo hacia adelante y la pierna opuesta hacia atrás, manteniendo la cadera y la espalda sin moverse. Vuelve a la posición inicial y alterna al otro lado.",
   },
   {
     id: "pull-apart-imaginario",
@@ -218,7 +218,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["espalda"],
     equipment: ["ninguno"],
     instructions:
-      "Brazos extendidos al frente a la altura de los hombros, lleva los codos hacia atrás apretando los omóplatos con fuerza, mantén y suelta.",
+      "Extiende los brazos al frente a la altura de los hombros, como si sostuvieras una banda elástica. Lleva los codos hacia atrás apretando los omóplatos con fuerza (sin usar peso ni banda, solo la contracción muscular), mantén 1-2 segundos y suelta.",
   },
   {
     id: "renegade-row-kb",
@@ -227,7 +227,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["espalda", "core", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "En posición de plancha con una mano sobre la kettlebell, rema tirando hacia la cadera alternando lados sin rotar el torso.",
+      "Ponte en posición de plancha alta con una mano apoyada sobre la kettlebell y la otra en el suelo, pies separados para dar estabilidad. Tira de la kettlebell hacia la cadera de ese lado sin rotar el torso, bájala y repite con el otro brazo.",
   },
 
   // ---------- PECHO ----------
@@ -238,7 +238,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["pecho", "brazos", "core"],
     equipment: ["ninguno"],
     instructions:
-      "Manos al ancho de hombros, baja el pecho hacia el suelo manteniendo el cuerpo recto, empuja de vuelta arriba.",
+      "En posición de plancha con las manos apoyadas un poco más ancho que los hombros, baja el pecho hacia el suelo manteniendo todo el cuerpo en línea recta (sin arquear ni levantar la cadera). Empuja el suelo para volver arriba.",
   },
   {
     id: "flexion-rodillas",
@@ -247,7 +247,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["pecho", "brazos"],
     equipment: ["ninguno"],
     instructions:
-      "Igual que la flexión estándar pero con las rodillas apoyadas en el suelo para reducir la carga.",
+      "Igual que la flexión de pecho estándar, pero apoyando las rodillas en el suelo en vez de los pies, para reducir el peso que cargan los brazos. Mantén una línea recta desde las rodillas hasta la cabeza.",
   },
   {
     id: "flexion-diamante",
@@ -256,7 +256,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["pecho", "brazos"],
     equipment: ["ninguno"],
     instructions:
-      "Manos juntas formando un diamante bajo el pecho, baja y empuja para enfatizar tríceps y pecho interno.",
+      "Coloca las manos juntas bajo el pecho, con los pulgares e índices formando un diamante o triángulo. Baja el pecho hacia las manos manteniendo el cuerpo recto y empuja de vuelta arriba; esta variante exige más al tríceps.",
   },
   {
     id: "flexion-amplia",
@@ -265,7 +265,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["pecho"],
     equipment: ["ninguno"],
     instructions:
-      "Manos más separadas que el ancho de hombros, baja controlado enfatizando el pecho.",
+      "Apoya las manos notablemente más separadas que el ancho de los hombros. Baja el pecho hacia el suelo de forma controlada manteniendo el cuerpo recto, y empuja de vuelta arriba.",
   },
   {
     id: "flexion-declinada",
@@ -274,7 +274,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["pecho", "brazos"],
     equipment: ["ninguno"],
     instructions:
-      "Con los pies apoyados en una superficie elevada y manos en el suelo, realiza la flexión enfatizando pecho superior.",
+      "Apoya los pies sobre una silla o superficie elevada y las manos en el suelo, quedando en diagonal con la cadera más alta que los hombros. Baja el pecho hacia el suelo y empuja de vuelta arriba; esta posición trabaja más la parte superior del pecho.",
   },
   {
     id: "press-pecho-kb",
@@ -301,7 +301,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["pecho", "brazos", "cardio"],
     equipment: ["ninguno"],
     instructions:
-      "Realiza una flexión con impulso explosivo para despegar las manos del suelo, aterriza suave y controla la bajada.",
+      "Realiza una flexión de pecho, pero al empujar hacia arriba hazlo con fuerza explosiva para que las manos se despeguen del suelo (con o sin aplauso). Aterriza suave con los brazos ligeramente flexionados y controla la bajada hacia la siguiente repetición.",
   },
   {
     id: "plancha-desplazamiento",
@@ -310,7 +310,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["pecho", "core", "brazos"],
     equipment: ["ninguno"],
     instructions:
-      "Desde plancha alta, desplaza el cuerpo hacia un lado con manos y pies, vuelve al centro y repite al otro lado.",
+      "Desde la posición de plancha alta, desplaza manos y pies hacia un lado manteniendo la cadera estable y el cuerpo recto, luego vuelve al centro y repite hacia el otro lado.",
   },
 
   // ---------- CORE ----------
@@ -321,7 +321,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["core"],
     equipment: ["ninguno"],
     instructions:
-      "Apoya antebrazos y puntas de los pies, mantén el cuerpo en línea recta apretando abdomen y glúteos.",
+      "Apoya los antebrazos y las puntas de los pies en el suelo, con los codos bajo los hombros. Aprieta el abdomen y los glúteos para mantener el cuerpo en una línea recta de la cabeza a los talones, sin dejar caer ni levantar la cadera.",
   },
   {
     id: "plancha-lateral",
@@ -330,7 +330,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["core"],
     equipment: ["ninguno"],
     instructions:
-      "Apoyado sobre un antebrazo y el borde del pie, mantén el cuerpo alineado sin dejar caer la cadera.",
+      "Recuéstate de lado apoyando el antebrazo (codo bajo el hombro) y el borde exterior del pie de abajo. Eleva la cadera del suelo hasta formar una línea recta de la cabeza a los pies, sin dejar que la cadera se hunda.",
   },
   {
     id: "abdominal-bicicleta",
@@ -339,7 +339,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["core"],
     equipment: ["ninguno"],
     instructions:
-      "Acostado boca arriba, lleva codo hacia rodilla contraria alternando en un movimiento de pedaleo.",
+      "Acuéstate boca arriba con las manos detrás de la cabeza y las piernas elevadas. Lleva un codo hacia la rodilla contraria mientras extiendes la otra pierna, alternando lados en un movimiento continuo de pedaleo.",
   },
   {
     id: "elevacion-piernas",
@@ -348,7 +348,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["core"],
     equipment: ["ninguno"],
     instructions:
-      "Acostado boca arriba, con piernas extendidas, elévalas hasta 90° y baja controlado sin tocar el suelo.",
+      "Acuéstate boca arriba con las piernas extendidas y las manos apoyadas a los lados o bajo la cadera para proteger la espalda baja. Eleva las piernas juntas hasta 90° y baja controlado, sin dejar que los pies toquen el suelo entre repeticiones.",
   },
   {
     id: "mountain-climber",
@@ -357,7 +357,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["core", "cardio"],
     equipment: ["ninguno"],
     instructions:
-      "En posición de plancha alta, lleva las rodillas alternadamente hacia el pecho a ritmo rápido.",
+      "En posición de plancha alta con los brazos extendidos, lleva una rodilla hacia el pecho y luego la otra, alternando rápido como si corrieras manteniendo la cadera baja y estable.",
   },
   {
     id: "russian-twist-kb",
@@ -366,7 +366,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Sentado con el torso inclinado hacia atrás y pies ligeramente elevados, gira la kettlebell de lado a lado tocando el suelo.",
+      "Siéntate con las rodillas flexionadas, el torso inclinado ligeramente hacia atrás y los pies levantados del suelo. Sostén la kettlebell con ambas manos y gira el torso llevándola de un lado al otro, tocando el suelo junto a la cadera en cada lado.",
   },
   {
     id: "v-ups",
@@ -375,7 +375,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["core"],
     equipment: ["ninguno"],
     instructions:
-      "Acostado boca arriba, eleva simultáneamente piernas y torso formando una V, toca los pies con las manos.",
+      "Acuéstate boca arriba con brazos y piernas extendidos. Eleva al mismo tiempo el torso y las piernas rectas, formando una V con el cuerpo, y trata de tocar los pies con las manos. Baja controlado sin dejar caer todo de golpe.",
   },
   {
     id: "dead-bug",
@@ -384,7 +384,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["core"],
     equipment: ["ninguno"],
     instructions:
-      "Acostado boca arriba con brazos y piernas en 90°, extiende brazo y pierna opuestos hacia el suelo sin arquear la espalda baja, vuelve y alterna.",
+      "Acuéstate boca arriba con los brazos hacia el techo y las rodillas flexionadas a 90° sobre la cadera. Baja lentamente un brazo hacia atrás y la pierna opuesta hacia el suelo al mismo tiempo, manteniendo la espalda baja pegada al suelo sin arquearla. Vuelve al centro y alterna.",
   },
   {
     id: "plancha-toques-hombro",
@@ -393,7 +393,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["core"],
     equipment: ["ninguno"],
     instructions:
-      "En plancha alta, toca el hombro contrario con una mano alternando sin balancear la cadera.",
+      "En posición de plancha alta con los pies bien separados para dar estabilidad, toca el hombro contrario con una mano y luego con la otra, alternando, sin dejar que la cadera se balancee de lado a lado.",
   },
   {
     id: "kb-halo",
@@ -402,7 +402,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["core", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Sostén la kettlebell por el asa cerca del pecho y rótala alrededor de la cabeza describiendo un círculo, alterna la dirección.",
+      "De pie, sostén la kettlebell por el asa cerca del pecho, con ambas manos. Rótala alrededor de la cabeza describiendo un círculo completo, pasándola de una mano a otra por detrás de la cabeza. Completa las repeticiones en una dirección y luego alterna hacia el otro lado.",
   },
   {
     id: "sit-up",
@@ -411,7 +411,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["core"],
     equipment: ["ninguno"],
     instructions:
-      "Acostado boca arriba con rodillas flexionadas, sube el torso completo hasta quedar sentado, baja controlado.",
+      "Acuéstate boca arriba con las rodillas flexionadas y los pies apoyados en el suelo. Sube el torso completo hasta quedar sentado, ayudándote con un balanceo suave de los brazos, y baja controlado hasta el suelo.",
   },
   {
     id: "hollow-hold",
@@ -420,7 +420,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["core"],
     equipment: ["ninguno"],
     instructions:
-      "Acostado boca arriba, eleva ligeramente hombros y piernas del suelo formando una curva, mantén la posición isométrica.",
+      "Acuéstate boca arriba con brazos y piernas extendidos. Eleva ligeramente hombros y piernas del suelo, presionando la espalda baja contra el piso para formar una curva suave con el cuerpo. Mantén la posición sin moverte.",
   },
 
   // ---------- BRAZOS ----------
@@ -431,7 +431,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "De pie, sostén la kettlebell con una mano y flexiona el codo llevándola hacia el hombro, baja controlado.",
+      "De pie con el brazo extendido junto al cuerpo, sostén la kettlebell con una mano (palma hacia adelante). Flexiona el codo llevando la kettlebell hacia el hombro sin mover el codo del costado, y baja controlado.",
   },
   {
     id: "press-hombro-kb",
@@ -440,7 +440,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Desde la posición de rack (kettlebell junto al hombro), empuja hacia arriba extendiendo el codo y baja controlado.",
+      "Sostén la kettlebell junto al hombro con el codo hacia abajo (posición de 'rack'). Empuja hacia arriba extendiendo el codo por completo hasta que el brazo quede recto sobre la cabeza, y baja controlado de vuelta al hombro.",
   },
   {
     id: "triceps-extension-kb",
@@ -449,7 +449,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Sostén la kettlebell con ambas manos detrás de la cabeza, extiende los codos hacia arriba y baja controlado.",
+      "De pie o sentado, sostén la kettlebell con ambas manos por encima de la cabeza. Baja la kettlebell detrás de la cabeza flexionando solo los codos (los brazos superiores no se mueven), y extiéndelos de vuelta hacia arriba.",
   },
   {
     id: "fondos-triceps",
@@ -458,7 +458,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["brazos"],
     equipment: ["ninguno"],
     instructions:
-      "Apoya las manos en el borde de una silla o superficie estable, baja el cuerpo flexionando los codos y empuja de vuelta arriba.",
+      "Apoya las manos en el borde de una silla, con las piernas extendidas al frente y los talones en el suelo. Baja el cuerpo flexionando los codos hacia atrás, y empuja con los brazos para volver arriba.",
   },
   {
     id: "elevacion-lateral-kb",
@@ -467,7 +467,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Con la kettlebell en una mano, eleva el brazo lateralmente hasta la altura del hombro con codo ligeramente flexionado, baja controlado.",
+      "De pie con la kettlebell en una mano junto al costado, eleva el brazo hacia el lado (no hacia adelante) hasta la altura del hombro, con el codo ligeramente flexionado. Baja controlado sin dejarla caer de golpe.",
   },
   {
     id: "curl-martillo-kb",
@@ -476,7 +476,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Sostén la kettlebell por el asa en posición neutra y flexiona el codo hacia el hombro, baja controlado.",
+      "De pie, sostén la kettlebell por el asa con la palma mirando hacia el cuerpo (posición neutra, como un martillo). Flexiona el codo llevando la kettlebell hacia el hombro sin girar la muñeca, y baja controlado.",
   },
   {
     id: "arm-circles",
@@ -485,7 +485,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["brazos"],
     equipment: ["ninguno"],
     instructions:
-      "Brazos extendidos a los lados, realiza círculos pequeños y controlados, aumentando el rango progresivamente.",
+      "De pie con los brazos extendidos a los lados a la altura de los hombros, realiza círculos pequeños y controlados. Ve aumentando el tamaño del círculo progresivamente durante el ejercicio.",
   },
   {
     id: "plancha-arriba-abajo",
@@ -494,7 +494,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["brazos", "core"],
     equipment: ["ninguno"],
     instructions:
-      "Desde plancha alta, baja a antebrazos uno a uno y vuelve a subir alternando el brazo que inicia.",
+      "Desde plancha alta, baja apoyando primero un antebrazo y luego el otro hasta quedar en plancha de antebrazos. Sube de nuevo a plancha alta empujando un brazo a la vez, alternando cuál brazo inicia el movimiento en cada repetición.",
   },
 
   // ---------- FULL BODY ----------
@@ -505,7 +505,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["full-body", "cardio"],
     equipment: ["ninguno"],
     instructions:
-      "Baja a sentadilla, lleva los pies atrás a plancha, haz una flexión opcional, vuelve a sentadilla y salta arriba.",
+      "Baja a sentadilla y apoya las manos en el suelo. Lleva los pies de un salto hacia atrás hasta quedar en posición de plancha. Puedes agregar una flexión de pecho aquí. Lleva los pies de vuelta junto a las manos y salta hacia arriba con los brazos extendidos.",
   },
   {
     id: "burpee-sin-salto",
@@ -514,7 +514,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["full-body", "cardio"],
     equipment: ["ninguno"],
     instructions:
-      "Igual que el burpee, pero en lugar de saltar al final simplemente ponte de pie, versión de bajo impacto.",
+      "Igual que el burpee: baja a sentadilla, lleva los pies atrás a plancha y vuelve a traerlos. Pero en lugar de saltar al final, simplemente ponte de pie de forma controlada; es la versión de bajo impacto para las articulaciones.",
   },
   {
     id: "kb-clean",
@@ -523,7 +523,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["full-body", "brazos"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Desde el suelo o balanceo, lleva la kettlebell explosivamente hasta la posición de rack junto al hombro con codo pegado al cuerpo.",
+      "Con la kettlebell colgando entre las piernas (como en el swing), impúlsala con fuerza usando la cadera y tira de ella hacia arriba, llevándola de un solo movimiento hasta apoyarla junto al hombro, con el codo pegado al cuerpo (posición de 'rack'). Baja controlado y repite.",
   },
   {
     id: "kb-snatch",
@@ -532,7 +532,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["full-body", "cardio"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Con un balanceo entre las piernas, impulsa la kettlebell en un solo movimiento hasta dejarla bloqueada sobre la cabeza.",
+      "Con la kettlebell colgando entre las piernas, impúlsala con la cadera hacia arriba y, sin detenerte en el hombro, deja que la mano rote alrededor del asa para que la kettlebell termine bloqueada con el brazo extendido sobre la cabeza. Bájala controlada por el mismo camino y repite.",
   },
   {
     id: "kb-clean-and-press",
@@ -541,7 +541,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["full-body", "brazos", "piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Lleva la kettlebell a la posición de rack (clean) y luego empújala sobre la cabeza (press) en un movimiento continuo.",
+      "Primero lleva la kettlebell junto al hombro con el codo pegado al cuerpo (clean). Desde ahí, sin pausa, empújala hacia arriba hasta extender el brazo completamente sobre la cabeza (press). Baja controlada y repite.",
   },
   {
     id: "kb-thruster",
@@ -550,7 +550,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["full-body", "piernas"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Desde la posición de rack, baja en sentadilla y al subir impulsa la kettlebell sobre la cabeza en un solo movimiento.",
+      "Con la kettlebell junto al hombro (posición de rack), baja en sentadilla completa. Al subir, usa el impulso de las piernas para empujar la kettlebell directo sobre la cabeza en un solo movimiento continuo.",
   },
   {
     id: "kb-turkish-getup",
@@ -559,7 +559,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["full-body", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Acostado con la kettlebell bloqueada sobre un brazo extendido, ponte de pie siguiendo la secuencia controlada y vuelve a acostarte igual.",
+      "Acuéstate boca arriba con la kettlebell sostenida con el brazo extendido hacia el techo (bloqueado). Sin dejar de mirar la kettlebell, incorpórate apoyándote en el codo, luego en la mano, pasa la pierna por debajo y ponte de pie paso a paso. Vuelve a acostarte siguiendo la misma secuencia en reversa. Empieza con peso ligero o sin peso hasta dominar la técnica.",
   },
   {
     id: "jumping-jacks",
@@ -568,7 +568,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["full-body", "cardio"],
     equipment: ["ninguno"],
     instructions:
-      "Salta abriendo piernas y brazos simultáneamente, luego vuelve a la posición inicial, mantén ritmo constante.",
+      "De pie con brazos junto al cuerpo, salta abriendo las piernas y llevando los brazos por encima de la cabeza al mismo tiempo. Salta de nuevo para volver a la posición inicial, manteniendo un ritmo constante.",
   },
   {
     id: "oso-crawl",
@@ -577,7 +577,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["full-body", "core"],
     equipment: ["ninguno"],
     instructions:
-      "En cuadrupedia con rodillas ligeramente elevadas del suelo, avanza moviendo mano y pie opuestos manteniendo la cadera estable.",
+      "Ponte en cuadrupedia con las rodillas ligeramente elevadas del suelo (unos centímetros). Avanza moviendo una mano y el pie del lado opuesto al mismo tiempo, manteniendo la cadera a la misma altura y sin balancearse.",
   },
   {
     id: "kb-swing-una-mano",
@@ -586,7 +586,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["full-body", "cardio", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Igual que el swing tradicional, sosteniendo la kettlebell con una sola mano y alternando en cada serie.",
+      "Igual que el kettlebell swing tradicional: impulsa la kettlebell con la cadera hasta la altura del pecho. La diferencia es que la sostienes con una sola mano; cambia de mano en cada serie para trabajar ambos lados.",
   },
 
   // ---------- CARDIO / HIIT ----------
@@ -597,7 +597,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["cardio", "piernas"],
     equipment: ["ninguno"],
     instructions:
-      "Corre en el mismo lugar llevando las rodillas lo más alto posible a ritmo rápido.",
+      "Corre en el mismo lugar llevando las rodillas lo más alto posible (idealmente hasta la altura de la cadera), a un ritmo rápido y constante, con los brazos moviéndose como al correr.",
   },
   {
     id: "skater-jump",
@@ -606,7 +606,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["cardio", "piernas"],
     equipment: ["ninguno"],
     instructions:
-      "Salta lateralmente de un pie al otro imitando el movimiento de patinaje, mantén el equilibrio en cada aterrizaje.",
+      "Salta lateralmente de un pie a otro, cruzando ligeramente la pierna de atrás por detrás de la de apoyo, imitando el movimiento de un patinador. Mantén el equilibrio un instante en cada aterrizaje antes de saltar al otro lado.",
   },
   {
     id: "sentadilla-salto-tuck",
@@ -615,7 +615,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["cardio", "piernas"],
     equipment: ["ninguno"],
     instructions:
-      "Salta llevando ambas rodillas hacia el pecho en el aire, aterriza suave y repite.",
+      "Desde de pie, salta hacia arriba llevando ambas rodillas hacia el pecho en el punto más alto del salto. Aterriza suave, flexionando las rodillas para amortiguar, y repite de inmediato.",
   },
   {
     id: "shadow-boxing",
@@ -624,7 +624,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["cardio", "brazos", "core"],
     equipment: ["ninguno"],
     instructions:
-      "Lanza combinaciones de golpes al aire manteniendo guardia alta y rotando la cadera, desplázate con pasos ligeros.",
+      "Ponte en posición de guardia (puños cerca de la cara, un pie ligeramente adelantado). Lanza combinaciones de golpes al aire rotando la cadera y los hombros con cada golpe, y desplázate con pasos ligeros entre combinaciones.",
   },
   {
     id: "sprint-en-lugar",
@@ -633,7 +633,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["cardio"],
     equipment: ["ninguno"],
     instructions:
-      "Corre en el mismo lugar al máximo esfuerzo posible, brazos activos, mantén el core firme.",
+      "Corre en el mismo lugar al máximo esfuerzo posible, levantando las rodillas y moviendo los brazos con fuerza, manteniendo el core firme para no perder la postura.",
   },
   {
     id: "plank-jack",
@@ -642,7 +642,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["cardio", "core"],
     equipment: ["ninguno"],
     instructions:
-      "En posición de plancha alta, salta abriendo y cerrando los pies manteniendo la cadera estable.",
+      "En posición de plancha alta con los brazos extendidos, salta abriendo los pies hacia afuera y luego ciérralos de un salto, manteniendo la cadera estable y sin subir ni bajar durante el movimiento.",
   },
   {
     id: "kb-swing-cardio",
@@ -651,7 +651,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["cardio", "piernas", "espalda"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Realiza swings de kettlebell de forma continua a ritmo constante para elevar la frecuencia cardíaca.",
+      "Realiza el kettlebell swing (impulso de cadera, no de brazos) de forma continua y a ritmo constante durante todo el tiempo indicado, sin pausas entre repeticiones, para mantener elevada la frecuencia cardíaca.",
   },
 
   // ---------- MOVILIDAD / EQUILIBRIO ----------
@@ -662,7 +662,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "core"],
     equipment: ["ninguno"],
     instructions:
-      "Sentado con ambas piernas dobladas a 90° (una hacia adelante, otra hacia atrás), rota de un lado a otro manteniendo el torso erguido.",
+      "Siéntate en el suelo con una pierna doblada a 90° hacia adelante y la otra doblada a 90° hacia atrás. Manteniendo el torso erguido, rota lentamente para llevar ambas piernas hacia el lado contrario, y repite de un lado a otro.",
   },
   {
     id: "estiramiento-mundial",
@@ -671,7 +671,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["full-body", "piernas"],
     equipment: ["ninguno"],
     instructions:
-      "Desde zancada profunda, apoya la mano contraria en el suelo y rota el torso llevando el otro brazo hacia el techo, alterna lados.",
+      "Da un paso largo hacia adelante hasta quedar en zancada profunda. Apoya la mano del lado de la pierna de atrás en el suelo, junto al pie delantero, y rota el torso llevando el otro brazo hacia el techo siguiéndolo con la mirada. Vuelve al centro y alterna de lado.",
   },
   {
     id: "equilibrio-una-pierna",
@@ -680,7 +680,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "core"],
     equipment: ["ninguno"],
     instructions:
-      "De pie sobre una pierna, inclina el torso y alcanza el suelo con la mano contraria manteniendo el equilibrio, vuelve arriba y repite.",
+      "Párate sobre una pierna con la otra ligeramente elevada. Manteniendo el equilibrio, inclina el torso hacia adelante y trata de alcanzar el suelo con la mano contraria a la pierna de apoyo. Vuelve a ponerte de pie despacio y repite.",
   },
   {
     id: "gato-camello",
@@ -689,7 +689,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["espalda", "core"],
     equipment: ["ninguno"],
     instructions:
-      "En cuadrupedia, alterna entre arquear la espalda hacia arriba (gato) y hundirla hacia abajo (camello) de forma controlada.",
+      "Ponte en cuadrupedia (manos bajo hombros, rodillas bajo cadera). Arquea la espalda hacia el techo metiendo la barbilla al pecho (posición de gato), y luego hunde el abdomen hacia el suelo levantando la cabeza y la cadera (posición de camello). Alterna entre ambas de forma lenta y controlada.",
   },
   {
     id: "rotacion-toracica",
@@ -698,7 +698,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["espalda", "core"],
     equipment: ["ninguno"],
     instructions:
-      "En cuadrupedia con una mano detrás de la cabeza, rota el torso llevando el codo hacia el techo y luego hacia adentro, alterna lados.",
+      "Ponte en cuadrupedia con una mano detrás de la cabeza. Rota el torso llevando ese codo hacia el techo, siguiéndolo con la mirada, y luego llévalo hacia adentro, por debajo del brazo de apoyo. Repite varias veces y cambia de lado.",
   },
   {
     id: "circulos-cadera",
@@ -707,7 +707,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "core"],
     equipment: ["ninguno"],
     instructions:
-      "De pie con manos en la cintura, realiza círculos amplios con la cadera en ambas direcciones.",
+      "De pie con las manos en la cintura y los pies al ancho de los hombros, realiza círculos amplios con la cadera, como si movieras un aro. Haz varias repeticiones en una dirección y luego en la otra.",
   },
 
   // ---------- ISOMÉTRICO ----------
@@ -718,7 +718,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas"],
     equipment: ["ninguno"],
     instructions:
-      "Pies bien separados apuntando afuera, baja a la posición más profunda de sentadilla sumo y mantén sin moverte.",
+      "Separa los pies más que el ancho de hombros con las puntas hacia afuera. Baja a la posición más profunda de la sentadilla sumo que puedas mantener con buena forma, y quédate ahí sin moverte durante todo el tiempo indicado.",
   },
   {
     id: "superman-hold",
@@ -727,7 +727,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["espalda", "core"],
     equipment: ["ninguno"],
     instructions:
-      "Acostado boca abajo, eleva brazos, pecho y piernas del suelo y mantén la posición sin bajar durante todo el tiempo indicado.",
+      "Acuéstate boca abajo con los brazos extendidos al frente. Eleva brazos, pecho y piernas del suelo al mismo tiempo, y mantén la posición sin bajar nada durante todo el tiempo indicado, respirando de forma controlada.",
   },
   {
     id: "flexion-isometrica",
@@ -736,7 +736,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["pecho", "brazos"],
     equipment: ["ninguno"],
     instructions:
-      "Baja a la mitad de una flexión de pecho y mantén esa posición sin subir ni bajar más.",
+      "Colócate en posición de flexión de pecho y baja hasta la mitad del recorrido, con los codos aproximadamente a 90°. Mantén esa posición exacta sin subir ni bajar más durante todo el tiempo indicado.",
   },
 
   // ---------- PLIOMÉTRICO ----------
@@ -747,7 +747,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "cardio"],
     equipment: ["ninguno"],
     instructions:
-      "Sobre una pierna, salta hacia adelante lo más lejos posible y aterriza controlado sobre la misma pierna, alterna lados.",
+      "Párate sobre una pierna y salta hacia adelante lo más lejos que puedas, aterrizando controlado sobre esa misma pierna sin perder el equilibrio. Vuelve al punto de partida y repite, luego alterna a la otra pierna.",
   },
   {
     id: "salto-lateral-continuo",
@@ -756,7 +756,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["piernas", "cardio"],
     equipment: ["ninguno"],
     instructions:
-      "Salta rápidamente de un lado a otro sobre una línea imaginaria en el suelo, manteniendo los pies juntos.",
+      "Imagina una línea en el suelo frente a ti. Salta rápidamente de un lado al otro de esa línea manteniendo los pies juntos y las rodillas ligeramente flexionadas para amortiguar cada aterrizaje.",
   },
 
   // ---------- CARDIO METABÓLICO ----------
@@ -767,7 +767,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["cardio", "piernas"],
     equipment: ["ninguno"],
     instructions:
-      "Desplázate rápidamente de lado a lado con pasos cortos y rápidos, manteniendo las rodillas semiflexionadas.",
+      "Ponte en posición atlética con las rodillas semiflexionadas. Desplázate rápidamente hacia un lado con pasos cortos y laterales, sin cruzar los pies, y luego hacia el otro lado.",
   },
 
   // ---------- FUERZA (carga cargada) ----------
@@ -778,7 +778,7 @@ export const EXERCISES: Exercise[] = [
     bodyParts: ["full-body", "brazos", "core"],
     equipment: ["kb-10kg", "kb-15lb", "kb-10lb"],
     instructions:
-      "Sostén la kettlebell a un lado del cuerpo y camina en el lugar o en línea recta manteniendo el torso erguido y el core firme.",
+      "Sostén la kettlebell con una mano, colgando junto al costado del cuerpo. Camina en el lugar o en línea recta manteniendo el torso erguido, los hombros nivelados y el core firme, sin inclinarte hacia el lado de la carga.",
   },
 ];
 
