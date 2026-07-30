@@ -1,0 +1,10 @@
+{
+  "name": "JAYFIT",
+  "short_name": "JAYFIT",
+  "description": "Sesiones de entrenamiento minimalistas: cuerpo libre y kettlebell.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": []
+}
