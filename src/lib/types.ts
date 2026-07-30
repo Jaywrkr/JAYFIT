@@ -15,12 +15,20 @@ export type Difficulty =
 
 export type Equipment = "ninguno" | "kb-10kg" | "kb-15lb" | "kb-10lb";
 
+export type ExerciseType =
+  | "fuerza"
+  | "pliometrico"
+  | "isometrico"
+  | "movilidad-equilibrio"
+  | "cardio-metabolico";
+
 export interface Exercise {
   id: string;
   name: string;
   bodyParts: BodyPart[];
   equipment: Equipment[];
   instructions: string;
+  type: ExerciseType;
 }
 
 export interface SessionBlock {
@@ -64,4 +72,12 @@ export const EQUIPMENT_LABELS: Record<Equipment, string> = {
   "kb-10kg": "Kettlebell 10 kg",
   "kb-15lb": "Kettlebell 15 lb",
   "kb-10lb": "Kettlebell 10 lb",
+};
+
+export const TYPE_LABELS: Record<ExerciseType, string> = {
+  fuerza: "Fuerza",
+  pliometrico: "Pliométrico",
+  isometrico: "Isométrico",
+  "movilidad-equilibrio": "Movilidad / Equilibrio",
+  "cardio-metabolico": "Cardio metabólico",
 };

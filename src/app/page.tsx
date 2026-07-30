@@ -7,11 +7,15 @@ import {
   BodyPart,
   DIFFICULTY_LABELS,
   Difficulty,
+  TYPE_LABELS,
+  ExerciseType,
 } from "@/lib/types";
+import { getSessionTypes } from "@/lib/workout";
 import { SessionCard } from "@/components/SessionCard";
 
 const BODY_PARTS = Object.keys(BODY_PART_LABELS) as BodyPart[];
 const DIFFICULTIES = Object.keys(DIFFICULTY_LABELS) as Difficulty[];
+const TYPES = Object.keys(TYPE_LABELS) as ExerciseType[];
 
 type EquipmentFilter = "todos" | "sin-equipo" | "con-kettlebell";
 
@@ -19,6 +23,7 @@ export default function Home() {
   const [bodyPart, setBodyPart] = useState<BodyPart | "todos">("todos");
   const [difficulty, setDifficulty] = useState<Difficulty | "todos">("todos");
   const [equipment, setEquipment] = useState<EquipmentFilter>("todos");
+  const [type, setType] = useState<ExerciseType | "todos">("todos");
 
   const sessions = useMemo(() => {
     return SESSIONS.filter((s) => {
@@ -28,9 +33,10 @@ export default function Home() {
         s.equipment.length === 1 && s.equipment[0] === "ninguno";
       if (equipment === "sin-equipo" && !isBodyweightOnly) return false;
       if (equipment === "con-kettlebell" && isBodyweightOnly) return false;
+      if (type !== "todos" && !getSessionTypes(s).includes(type)) return false;
       return true;
     });
-  }, [bodyPart, difficulty, equipment]);
+  }, [bodyPart, difficulty, equipment, type]);
 
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-5 py-10 sm:px-8">
@@ -68,6 +74,15 @@ export default function Home() {
             { value: "todos", label: "Todo" },
             { value: "sin-equipo", label: "Sin equipo" },
             { value: "con-kettlebell", label: "Con kettlebell" },
+          ]}
+        />
+        <FilterRow
+          label="Tipo"
+          value={type}
+          onChange={setType}
+          options={[
+            { value: "todos", label: "Todos" },
+            ...TYPES.map((t) => ({ value: t, label: TYPE_LABELS[t] })),
           ]}
         />
       </div>

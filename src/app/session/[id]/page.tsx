@@ -6,6 +6,7 @@ import {
   BODY_PART_LABELS,
   DIFFICULTY_LABELS,
   EQUIPMENT_LABELS,
+  TYPE_LABELS,
 } from "@/lib/types";
 import { buildRounds, estimateSessionSeconds, formatMinutes } from "@/lib/workout";
 import { Badge } from "@/components/Badge";
@@ -83,9 +84,14 @@ export default async function SessionPage({
                         </span>
                       </div>
                       {showDescription && (
-                        <p className="text-sm text-black/60 dark:text-white/60">
-                          {exercise.instructions}
-                        </p>
+                        <>
+                          <span className="text-[11px] font-medium uppercase tracking-wide text-black/40 dark:text-white/40">
+                            {TYPE_LABELS[exercise.type]}
+                          </span>
+                          <p className="text-sm text-black/60 dark:text-white/60">
+                            {exercise.instructions}
+                          </p>
+                        </>
                       )}
                     </li>
                   );
