@@ -14,6 +14,7 @@ import {
 import { getSessionTypes } from "@/lib/workout";
 import { DAILY_CORE_SESSION_ID, WEEKDAY_LABELS, getDayPlan } from "@/lib/schedule";
 import { SessionCard } from "@/components/SessionCard";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const BODY_PARTS = Object.keys(BODY_PART_LABELS) as BodyPart[];
 const DIFFICULTIES = Object.keys(DIFFICULTY_LABELS) as Difficulty[];
@@ -137,11 +138,14 @@ export default function Home() {
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-5 py-10 sm:px-8 lg:max-w-none lg:flex-row lg:items-start lg:gap-12 lg:px-12 lg:py-12">
       <aside className="hidden lg:sticky lg:top-12 lg:flex lg:w-72 lg:shrink-0 lg:flex-col lg:gap-8">
-        <header className="flex flex-col gap-1">
-          <h1 className="text-3xl font-black tracking-tight">JAYFIT</h1>
-          <p className="text-sm text-black/60 dark:text-white/60">
-            Sesiones de entrenamiento sin excusas. Cuerpo libre o kettlebell.
-          </p>
+        <header className="flex items-start justify-between gap-3">
+          <div className="flex flex-col gap-1">
+            <h1 className="text-3xl font-black tracking-tight">JAYFIT</h1>
+            <p className="text-sm text-black/60 dark:text-white/60">
+              Sesiones de entrenamiento sin excusas. Cuerpo libre o kettlebell.
+            </p>
+          </div>
+          <ThemeToggle />
         </header>
         {dayBanner}
         {filters(true)}

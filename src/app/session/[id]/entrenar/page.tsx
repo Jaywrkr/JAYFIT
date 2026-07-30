@@ -6,6 +6,7 @@ import Link from "next/link";
 import { getSessionById } from "@/lib/sessions";
 import { getExerciseById } from "@/lib/exercises";
 import { buildSteps } from "@/lib/workout";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function TrainPage() {
   const params = useParams<{ id: string }>();
@@ -123,6 +124,7 @@ export default function TrainPage() {
             style={{ width: `${progressPercent}%` }}
           />
         </div>
+        <ThemeToggle />
       </div>
 
       <div className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
