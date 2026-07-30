@@ -1,7 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { SESSIONS } from "@/lib/sessions";
+import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { SESSIONS, getSessionById } from "@/lib/sessions";
 import {
   BODY_PART_LABELS,
   BodyPart,
@@ -11,6 +12,7 @@ import {
   ExerciseType,
 } from "@/lib/types";
 import { getSessionTypes } from "@/lib/workout";
+import { DAILY_CORE_SESSION_ID, WEEKDAY_LABELS, getDayPlan } from "@/lib/schedule";
 import { SessionCard } from "@/components/SessionCard";
 
 const BODY_PARTS = Object.keys(BODY_PART_LABELS) as BodyPart[];
@@ -24,6 +26,14 @@ export default function Home() {
   const [difficulty, setDifficulty] = useState<Difficulty | "todos">("todos");
   const [equipment, setEquipment] = useState<EquipmentFilter>("todos");
   const [type, setType] = useState<ExerciseType | "todos">("todos");
+  const [weekday, setWeekday] = useState<number | null>(null);
+
+  useEffect(() => {
+    setWeekday(new Date().getDay());
+  }, []);
+
+  const todayPlan = weekday !== null ? getDayPlan(weekday) : null;
+  const dailyCoreSession = getSessionById(DAILY_CORE_SESSION_ID);
 
   const sessions = useMemo(() => {
     return SESSIONS.filter((s) => {
@@ -46,6 +56,46 @@ export default function Home() {
           Sesiones de entrenamiento sin excusas. Cuerpo libre o kettlebell.
         </p>
       </header>
+
+      {todayPlan && (
+        <div className="flex flex-col gap-3 rounded-2xl border border-black/10 p-4 dark:border-white/15">
+          <span className="text-[11px] font-semibold uppercase tracking-wide text-black/40 dark:text-white/40">
+            {WEEKDAY_LABELS[weekday!]}
+          </span>
+          <p className="text-sm">
+            {todayPlan.flexible ? (
+              <>
+                Día flexible: elige <strong>full body</strong> o{" "}
+                <strong>cardio/HIIT</strong>, lo que prefieras.
+              </>
+            ) : (
+              <>
+                Toca{" "}
+                <strong>
+                  {todayPlan.bodyParts.map((bp) => BODY_PART_LABELS[bp]).join(" / ")}
+                </strong>{" "}
+                según tu split semanal.
+              </>
+            )}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setBodyPart(todayPlan.bodyParts[0])}
+              className="rounded-full border border-black bg-black px-3 py-1.5 text-sm font-medium text-white dark:border-white dark:bg-white dark:text-black"
+            >
+              Ver sesiones de hoy
+            </button>
+            {dailyCoreSession && (
+              <Link
+                href={`/session/${dailyCoreSession.id}`}
+                className="rounded-full border border-black/20 px-3 py-1.5 text-sm font-medium dark:border-white/25"
+              >
+                + Core diario (8 min)
+              </Link>
+            )}
+          </div>
+        </div>
+      )}
 
       <div className="flex flex-col gap-3">
         <FilterRow
