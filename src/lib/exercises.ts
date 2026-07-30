@@ -780,6 +780,100 @@ export const EXERCISES: Exercise[] = [
     instructions:
       "Sostén la kettlebell con una mano, colgando junto al costado del cuerpo. Camina en el lugar o en línea recta manteniendo el torso erguido, los hombros nivelados y el core firme, sin inclinarte hacia el lado de la carga.",
   },
+
+  // ---------- PORTERO (GOALKEEPER) ----------
+  {
+    id: "portero-posicion-base",
+    type: "isometrico",
+    name: "Posición base de portero",
+    bodyParts: ["portero", "piernas"],
+    equipment: ["ninguno"],
+    instructions:
+      "Ponte en posición atlética baja: rodillas flexionadas, peso en la punta de los pies, brazos ligeramente adelantados y listos para reaccionar. Mantén la posición sin enderezarte durante todo el tiempo indicado, como si esperaras un remate.",
+  },
+  {
+    id: "portero-reaccion-lateral",
+    type: "pliometrico",
+    name: "Reacción lateral explosiva",
+    bodyParts: ["portero", "piernas", "cardio"],
+    equipment: ["ninguno"],
+    instructions:
+      "Desde la posición base de portero, da un paso explosivo hacia un lado como si fueras a interceptar un balón, y vuelve rápido al centro. Alterna de lado a cada repetición, manteniendo siempre las rodillas flexionadas.",
+  },
+  {
+    id: "portero-zambullida-lateral",
+    type: "pliometrico",
+    name: "Zambullida lateral controlada",
+    bodyParts: ["portero", "core", "full-body"],
+    equipment: ["ninguno"],
+    instructions:
+      "Desde la posición base, impúlsate lateralmente hacia el suelo con los brazos extendidos como si atajaras un balón, apoyando primero el antebrazo y el costado de la cadera para amortiguar. Vuelve de pie de forma controlada y repite hacia el otro lado. Empieza despacio hasta dominar la caída.",
+  },
+  {
+    id: "portero-salto-alcance",
+    type: "pliometrico",
+    name: "Salto de alcance (reflejo alto)",
+    bodyParts: ["portero", "piernas"],
+    equipment: ["ninguno"],
+    instructions:
+      "Desde la posición base, salta explosivamente hacia arriba y hacia un lado extendiendo un brazo por encima de la cabeza, como si desviaras un balón por arriba del travesaño. Aterriza suave y vuelve a la posición base, alternando el lado y el brazo que extiendes.",
+  },
+  {
+    id: "portero-pies-rapidos",
+    type: "cardio-metabolico",
+    name: "Pies rápidos en el lugar",
+    bodyParts: ["portero", "cardio", "piernas"],
+    equipment: ["ninguno"],
+    instructions:
+      "En posición atlética baja, mueve los pies muy rápido tocando el suelo en el mismo lugar, casi sin levantar los talones, como calentamiento de reflejos antes de reaccionar a un disparo. Mantén el ritmo constante durante todo el tiempo indicado.",
+  },
+
+  // ---------- MUAY THAI ----------
+  {
+    id: "rodillazo-alterno",
+    type: "cardio-metabolico",
+    name: "Rodillazos alternos (knee strikes)",
+    bodyParts: ["muay-thai", "core", "cardio"],
+    equipment: ["ninguno"],
+    instructions:
+      "De pie en guardia, lleva una rodilla con fuerza hacia el frente y arriba, como si golpearas un blanco a la altura del abdomen, usando la cadera para generar potencia. Baja el pie y repite con la otra pierna, alternando a buen ritmo.",
+  },
+  {
+    id: "rodillazo-salto",
+    type: "pliometrico",
+    name: "Rodillazo con salto (jumping knee)",
+    bodyParts: ["muay-thai", "cardio", "piernas"],
+    equipment: ["ninguno"],
+    instructions:
+      "Desde guardia, salta impulsándote con ambas piernas y, en el aire, lleva una rodilla con fuerza hacia el pecho como en un rodillazo explosivo. Aterriza suave con ambos pies y repite alternando la pierna que golpea.",
+  },
+  {
+    id: "patada-frontal-alterna",
+    type: "movilidad-equilibrio",
+    name: "Patada frontal alterna (shadow)",
+    bodyParts: ["muay-thai", "piernas", "core"],
+    equipment: ["ninguno"],
+    instructions:
+      "De pie en guardia, lanza una patada frontal al aire extendiendo la pierna desde la cadera, empujando con la cadera hacia adelante como si golpearas con la planta del pie. Vuelve a guardia con control (sin dejar caer la pierna de golpe) y alterna de lado.",
+  },
+  {
+    id: "patada-circular-alterna",
+    type: "movilidad-equilibrio",
+    name: "Patada circular alterna (shadow)",
+    bodyParts: ["muay-thai", "piernas", "core"],
+    equipment: ["ninguno"],
+    instructions:
+      "De pie en guardia, gira sobre el pie de apoyo y lanza una patada circular al aire rotando la cadera por completo, como si golpearas con la espinilla. Vuelve a guardia con control y alterna de pierna en cada repetición.",
+  },
+  {
+    id: "muay-thai-clinch-knees",
+    type: "fuerza",
+    name: "Rodillazos en clinch simulado",
+    bodyParts: ["muay-thai", "core", "brazos"],
+    equipment: ["ninguno"],
+    instructions:
+      "Entrelaza las manos detrás de la cabeza como si sujetaras el cuello de un compañero en clinch. Tira suavemente hacia abajo mientras lanzas rodillazos alternos con fuerza hacia el frente, manteniendo el torso erguido y el core firme durante todo el movimiento.",
+  },
 ];
 
 export function getExerciseById(id: string): Exercise | undefined {
