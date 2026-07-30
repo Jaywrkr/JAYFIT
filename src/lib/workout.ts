@@ -19,33 +19,73 @@ function blockWorkSeconds(workSeconds?: number, reps?: number): number {
   return 30;
 }
 
+/**
+ * Sesiones en formato "circuito": en vez de completar todas las series de un
+ * ejercicio antes de pasar al siguiente, se recorren todos los ejercicios en
+ * la ronda 1, luego todos en la ronda 2, etc. (ejercicio A serie 1, ejercicio
+ * B serie 1, ejercicio C serie 1, ejercicio A serie 2...).
+ */
 export function buildSteps(session: Session): WorkoutStep[] {
-  const steps: WorkoutStep[] = [
-    { kind: "prepare", seconds: 10 },
-  ];
+  const steps: WorkoutStep[] = [{ kind: "prepare", seconds: 10 }];
 
-  session.blocks.forEach((block, blockIndex) => {
-    for (let set = 1; set <= block.sets; set++) {
+  const maxSets = Math.max(...session.blocks.map((b) => b.sets));
+
+  for (let round = 1; round <= maxSets; round++) {
+    session.blocks.forEach((block, blockIndex) => {
+      if (round > block.sets) return;
+
       steps.push({
         kind: "work",
         seconds: blockWorkSeconds(block.workSeconds, block.reps),
         exerciseId: block.exerciseId,
         reps: block.reps,
-        setNumber: set,
+        setNumber: round,
         totalSets: block.sets,
         blockIndex,
       });
 
-      const isLastSetOfSession =
-        blockIndex === session.blocks.length - 1 && set === block.sets;
+      const isLastStepOfSession =
+        round === maxSets && blockIndex === session.blocks.length - 1;
 
-      if (!isLastSetOfSession) {
+      if (!isLastStepOfSession) {
         steps.push({ kind: "rest", seconds: block.restSeconds });
       }
-    }
-  });
+    });
+  }
 
   return steps;
+}
+
+export interface WorkoutRound {
+  roundNumber: number;
+  items: {
+    blockIndex: number;
+    exerciseId: string;
+    reps?: number;
+    workSeconds?: number;
+  }[];
+}
+
+/** Misma agrupación en rondas que buildSteps, para mostrarla en la vista previa de la sesión. */
+export function buildRounds(session: Session): WorkoutRound[] {
+  const maxSets = Math.max(...session.blocks.map((b) => b.sets));
+  const rounds: WorkoutRound[] = [];
+
+  for (let round = 1; round <= maxSets; round++) {
+    const items = session.blocks
+      .map((block, blockIndex) => ({ block, blockIndex }))
+      .filter(({ block }) => round <= block.sets)
+      .map(({ block, blockIndex }) => ({
+        blockIndex,
+        exerciseId: block.exerciseId,
+        reps: block.reps,
+        workSeconds: block.workSeconds,
+      }));
+
+    rounds.push({ roundNumber: round, items });
+  }
+
+  return rounds;
 }
 
 export function estimateSessionSeconds(session: Session): number {
