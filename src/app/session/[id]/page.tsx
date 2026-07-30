@@ -7,9 +7,8 @@ import {
   DIFFICULTY_LABELS,
   EQUIPMENT_LABELS,
 } from "@/lib/types";
-import { estimateSessionSeconds, formatMinutes } from "@/lib/workout";
+import { buildRounds, estimateSessionSeconds, formatMinutes } from "@/lib/workout";
 import { Badge } from "@/components/Badge";
-import { StickFigure } from "@/components/StickFigure";
 
 export function generateStaticParams() {
   return SESSIONS.map((s) => ({ id: s.id }));
@@ -25,6 +24,7 @@ export default async function SessionPage({
   if (!session) notFound();
 
   const duration = formatMinutes(estimateSessionSeconds(session));
+  const rounds = buildRounds(session);
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-5 py-10 sm:px-8">
@@ -57,36 +57,43 @@ export default async function SessionPage({
         Empezar entrenamiento
       </Link>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-6">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-black/40 dark:text-white/40">
-          Ejercicios
+          Timeline del entrenamiento
         </h2>
-        <ol className="flex flex-col divide-y divide-black/10 dark:divide-white/10">
-          {session.blocks.map((block, i) => {
-            const exercise = getExerciseById(block.exerciseId);
-            if (!exercise) return null;
-            return (
-              <li key={i} className="flex items-start gap-4 py-4">
-                <div className="h-14 w-14 shrink-0 text-black/80 dark:text-white/80">
-                  <StickFigure pose={exercise.pose} />
-                </div>
-                <div className="flex flex-1 flex-col gap-1">
-                  <div className="flex items-baseline justify-between gap-2">
-                    <span className="font-semibold">
-                      {i + 1}. {exercise.name}
-                    </span>
-                    <span className="shrink-0 text-sm text-black/50 dark:text-white/50">
-                      {block.sets} × {block.reps ? `${block.reps} reps` : `${block.workSeconds}s`}
-                    </span>
-                  </div>
-                  <p className="text-sm text-black/60 dark:text-white/60">
-                    {exercise.instructions}
-                  </p>
-                </div>
-              </li>
-            );
-          })}
-        </ol>
+        {(() => {
+          const seen = new Set<string>();
+          return rounds.map((round) => (
+            <div key={round.roundNumber} className="flex flex-col gap-3">
+              <span className="text-xs font-semibold uppercase tracking-widest text-black/35 dark:text-white/35">
+                Ronda {round.roundNumber}
+              </span>
+              <ol className="flex flex-col divide-y divide-black/10 dark:divide-white/10">
+                {round.items.map((item) => {
+                  const exercise = getExerciseById(item.exerciseId);
+                  if (!exercise) return null;
+                  const showDescription = !seen.has(item.exerciseId);
+                  seen.add(item.exerciseId);
+                  return (
+                    <li key={`${round.roundNumber}-${item.blockIndex}`} className="flex flex-col gap-1 py-3">
+                      <div className="flex items-baseline justify-between gap-2">
+                        <span className="font-semibold">{exercise.name}</span>
+                        <span className="shrink-0 text-sm text-black/50 dark:text-white/50">
+                          {item.reps ? `${item.reps} reps` : `${item.workSeconds}s`}
+                        </span>
+                      </div>
+                      {showDescription && (
+                        <p className="text-sm text-black/60 dark:text-white/60">
+                          {exercise.instructions}
+                        </p>
+                      )}
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
+          ));
+        })()}
       </div>
     </div>
   );

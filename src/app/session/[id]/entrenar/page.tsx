@@ -6,7 +6,6 @@ import Link from "next/link";
 import { getSessionById } from "@/lib/sessions";
 import { getExerciseById } from "@/lib/exercises";
 import { buildSteps } from "@/lib/workout";
-import { StickFigure } from "@/components/StickFigure";
 
 export default function TrainPage() {
   const params = useParams<{ id: string }>();
@@ -145,16 +144,11 @@ export default function TrainPage() {
         {!isRest && !isPrepare && (
           <>
             <p className="text-sm font-semibold uppercase tracking-widest text-black/50 dark:text-white/50">
-              Serie {step.setNumber} de {step.totalSets}
+              Ronda {step.setNumber} de {step.totalSets}
             </p>
             <h1 className="text-3xl font-black leading-tight">
               {exercise?.name}
             </h1>
-            {exercise && (
-              <div className="h-28 w-28 text-black/80 dark:text-white/80">
-                <StickFigure pose={exercise.pose} />
-              </div>
-            )}
             {step.reps && (
               <p className="text-lg font-medium text-black/60 dark:text-white/60">
                 {step.reps} repeticiones
