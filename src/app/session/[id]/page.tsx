@@ -10,6 +10,7 @@ import {
 } from "@/lib/types";
 import { buildRounds, estimateSessionSeconds, formatMinutes } from "@/lib/workout";
 import { Badge } from "@/components/Badge";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function generateStaticParams() {
   return SESSIONS.map((s) => ({ id: s.id }));
@@ -29,12 +30,15 @@ export default async function SessionPage({
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-6 px-5 py-10 sm:px-8">
-      <Link
-        href="/"
-        className="text-sm font-medium text-black/50 hover:text-black dark:text-white/50 dark:hover:text-white"
-      >
-        ← Sesiones
-      </Link>
+      <div className="flex items-center justify-between gap-3">
+        <Link
+          href="/"
+          className="text-sm font-medium text-black/50 hover:text-black dark:text-white/50 dark:hover:text-white"
+        >
+          ← Sesiones
+        </Link>
+        <ThemeToggle />
+      </div>
 
       <div className="flex flex-col gap-3">
         <h1 className="text-3xl font-black tracking-tight">{session.name}</h1>
