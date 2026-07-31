@@ -14,6 +14,7 @@ import {
 import { getSessionTypes } from "@/lib/workout";
 import { WEEKDAY_LABELS, getDailyCoreSessionId, getDayPlan } from "@/lib/schedule";
 import { getStreak } from "@/lib/history";
+import { PROGRAM_WEEKS, ProgramDayPlan, getProgramDayPlan, getProgramStartDate } from "@/lib/program";
 import { SessionCard } from "@/components/SessionCard";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
@@ -31,10 +32,13 @@ export default function Home() {
   const [weekday, setWeekday] = useState<number | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [streak, setStreak] = useState<number | null>(null);
+  const [programToday, setProgramToday] = useState<ProgramDayPlan | null | undefined>(undefined);
 
   useEffect(() => {
     setWeekday(new Date().getDay());
     setStreak(getStreak());
+    const startDate = getProgramStartDate();
+    setProgramToday(startDate ? getProgramDayPlan(startDate) : null);
   }, []);
 
   const todayPlan = weekday !== null ? getDayPlan(weekday) : null;
@@ -92,6 +96,29 @@ export default function Home() {
       </div>
     </div>
   );
+
+  const programSession = programToday?.sessionId ? getSessionById(programToday.sessionId) : undefined;
+  const programWidget =
+    programToday === undefined ? null : programToday ? (
+      <Link
+        href="/programa"
+        className="flex flex-col gap-0.5 rounded-xl border border-black/10 p-3 text-xs dark:border-white/15"
+      >
+        <span className="font-semibold">
+          Programa · Semana {programToday.week}/{PROGRAM_WEEKS}
+        </span>
+        <span className="text-black/60 dark:text-white/60">
+          {programSession ? `Hoy: ${programSession.name}` : "Ver plan de hoy"}
+        </span>
+      </Link>
+    ) : (
+      <Link
+        href="/programa"
+        className="rounded-xl border border-dashed border-black/20 p-3 text-xs text-black/60 hover:border-black/40 dark:border-white/25 dark:text-white/60 dark:hover:border-white/50"
+      >
+        ¿Seguir un programa estructurado de 8 semanas? →
+      </Link>
+    );
 
   const filters = (
     <div className="flex flex-col gap-4">
@@ -159,6 +186,7 @@ export default function Home() {
           </div>
         </header>
         {dayBanner}
+        {programWidget}
         {filters}
       </aside>
 
@@ -187,6 +215,7 @@ export default function Home() {
             </div>
           </header>
           {dayBanner}
+          {programWidget}
           <button
             onClick={() => setFiltersOpen(true)}
             className="flex items-center gap-2 self-start rounded-full border border-black/15 px-4 py-2 text-sm font-medium dark:border-white/20"

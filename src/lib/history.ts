@@ -48,9 +48,14 @@ export function setLastEntryRpe(sessionId: string, rpe: number) {
   saveHistory(history);
 }
 
-function toLocalDateKey(iso: string): string {
-  const d = new Date(iso);
+export function toLocalDateKey(iso: string | Date): string {
+  const d = typeof iso === "string" ? new Date(iso) : iso;
   return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+}
+
+/** Fechas (clave local) en las que se completó al menos una sesión. */
+export function getCompletedDateKeys(history: HistoryEntry[] = getHistory()): Set<string> {
+  return new Set(history.map((e) => toLocalDateKey(e.completedAt)));
 }
 
 /** Racha de días consecutivos con al menos una sesión completada (incluye hoy o ayer). */
