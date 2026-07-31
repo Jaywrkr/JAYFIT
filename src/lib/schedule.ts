@@ -37,18 +37,20 @@ export function getDayPlan(weekday: number): DayPlan {
 }
 
 /**
- * Sesiones cortas de core (8 min) sugeridas como añadido diario, sin importar
- * la zona del día. Hay varias con distinto enfoque para no repetir siempre
- * la misma; el banner del día rota entre ellas según el día de la semana.
+ * Sesión corta de core (8 min) sugerida como añadido diario, sin importar la
+ * zona del día. Hay una distinta para cada día de la semana, así el añadido
+ * diario nunca se repite de una semana a otra.
  */
-export const CORE_EXPRESS_SESSION_IDS = [
-  "core-express",
-  "core-express-plancha",
-  "core-express-rotacion",
-  "core-express-piernas",
-  "core-express-isometrico",
-];
+export const DAILY_CORE_SESSION_BY_WEEKDAY: Record<number, string> = {
+  0: "core-express-explosivo", // domingo
+  1: "core-express", // lunes
+  2: "core-express-rotacion", // martes
+  3: "core-express-plancha", // miércoles
+  4: "core-express-piernas", // jueves
+  5: "core-express-isometrico", // viernes
+  6: "core-express-equilibrio", // sábado
+};
 
 export function getDailyCoreSessionId(weekday: number): string {
-  return CORE_EXPRESS_SESSION_IDS[weekday % CORE_EXPRESS_SESSION_IDS.length];
+  return DAILY_CORE_SESSION_BY_WEEKDAY[weekday];
 }
