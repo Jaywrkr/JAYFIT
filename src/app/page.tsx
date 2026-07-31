@@ -52,39 +52,38 @@ export default function Home() {
   }, [bodyPart, difficulty, equipment, type]);
 
   const dayBanner = todayPlan && (
-    <div className="flex flex-col gap-3 rounded-2xl border border-black/10 p-4 dark:border-white/15">
-      <span className="text-[11px] font-semibold uppercase tracking-wide text-black/40 dark:text-white/40">
+    <div className="flex flex-col gap-2 rounded-xl border border-black/10 p-3 dark:border-white/15">
+      <span className="text-[10px] font-semibold uppercase tracking-wide text-black/40 dark:text-white/40">
         {WEEKDAY_LABELS[weekday!]}
       </span>
-      <p className="text-sm">
+      <p className="text-xs leading-snug">
         {todayPlan.flexible ? (
           <>
-            Día flexible: elige <strong>full body</strong> o{" "}
-            <strong>cardio/HIIT</strong>, lo que prefieras.
+            Día flexible: <strong>full body</strong> o <strong>cardio/HIIT</strong>.
           </>
         ) : (
           <>
             Toca{" "}
             <strong>
               {todayPlan.bodyParts.map((bp) => BODY_PART_LABELS[bp]).join(" / ")}
-            </strong>{" "}
-            según tu split semanal.
+            </strong>
+            .
           </>
         )}
       </p>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-1.5">
         <button
           onClick={() => setBodyPart(todayPlan.bodyParts[0])}
-          className="rounded-full border border-black bg-black px-3 py-1.5 text-sm font-medium text-white dark:border-white dark:bg-white dark:text-black"
+          className="rounded-full border border-black bg-black px-2.5 py-1 text-xs font-medium text-white dark:border-white dark:bg-white dark:text-black"
         >
-          Ver sesiones de hoy
+          Sesiones de hoy
         </button>
         {dailyCoreSession && (
           <Link
             href={`/session/${dailyCoreSession.id}`}
-            className="rounded-full border border-black/20 px-3 py-1.5 text-sm font-medium dark:border-white/25"
+            className="rounded-full border border-black/20 px-2.5 py-1 text-xs font-medium dark:border-white/25"
           >
-            + Core diario (8 min)
+            + Core (8 min)
           </Link>
         )}
       </div>
@@ -92,7 +91,7 @@ export default function Home() {
   );
 
   const filters = (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-4">
       <FilterRow
         label="Zona"
         value={bodyPart}
@@ -134,16 +133,16 @@ export default function Home() {
   );
 
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-5 py-10 sm:px-8 lg:max-w-none lg:flex-row lg:items-start lg:gap-12 lg:px-12 lg:py-12">
-      <aside className="hidden lg:sticky lg:top-12 lg:flex lg:w-72 lg:shrink-0 lg:flex-col lg:gap-8">
-        <header className="flex items-start justify-between gap-3">
-          <div className="flex flex-col gap-1">
-            <h1 className="text-3xl font-black tracking-tight">JAYFIT</h1>
-            <p className="text-sm text-black/60 dark:text-white/60">
-              Sesiones de entrenamiento sin excusas. Cuerpo libre o kettlebell.
-            </p>
+    <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-5 py-10 sm:px-8 lg:max-w-none lg:flex-row lg:items-start lg:gap-8 lg:px-8 lg:py-8">
+      <aside className="hidden lg:sticky lg:top-8 lg:flex lg:w-56 lg:shrink-0 lg:flex-col lg:gap-4">
+        <header className="flex flex-col gap-1">
+          <div className="flex items-center justify-between gap-2">
+            <h1 className="text-xl font-black tracking-tight">JAYFIT</h1>
+            <ThemeToggle />
           </div>
-          <ThemeToggle />
+          <p className="text-xs text-black/60 dark:text-white/60">
+            Cuerpo libre o kettlebell.
+          </p>
         </header>
         {dayBanner}
         {filters}
@@ -224,18 +223,18 @@ function FilterRow<T extends string>({
   options: { value: T; label: string }[];
 }) {
   return (
-    <div className="flex flex-col gap-1.5">
-      <span className="text-[11px] font-semibold uppercase tracking-wide text-black/40 dark:text-white/40">
+    <div className="flex flex-col gap-1">
+      <span className="text-[10px] font-semibold uppercase tracking-wide text-black/40 dark:text-white/40">
         {label}
       </span>
-      <div className="flex flex-col items-start gap-1.5">
+      <div className="flex flex-wrap gap-1">
         {options.map((opt) => {
           const active = opt.value === value;
           return (
             <button
               key={opt.value}
               onClick={() => onChange(opt.value)}
-              className={`w-full whitespace-nowrap rounded-full border px-3 py-1.5 text-left text-sm font-medium transition-colors ${
+              className={`whitespace-nowrap rounded-full border px-2 py-1 text-xs font-medium transition-colors ${
                 active
                   ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
                   : "border-black/15 text-black/70 hover:border-black/40 dark:border-white/20 dark:text-white/70 dark:hover:border-white/50"
