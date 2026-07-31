@@ -11,6 +11,7 @@ import {
 import { buildRounds, estimateSessionSeconds, formatMinutes } from "@/lib/workout";
 import { Badge } from "@/components/Badge";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { SessionHistoryTip } from "@/components/SessionHistoryTip";
 
 export function generateStaticParams() {
   return SESSIONS.map((s) => ({ id: s.id }));
@@ -54,6 +55,8 @@ export default async function SessionPage({
           Equipo: {session.equipment.map((e) => EQUIPMENT_LABELS[e]).join(" / ")}
         </div>
       </div>
+
+      <SessionHistoryTip sessionId={session.id} />
 
       <Link
         href={`/session/${session.id}/entrenar`}

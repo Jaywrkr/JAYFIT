@@ -13,6 +13,7 @@ import {
 } from "@/lib/types";
 import { getSessionTypes } from "@/lib/workout";
 import { WEEKDAY_LABELS, getDailyCoreSessionId, getDayPlan } from "@/lib/schedule";
+import { getStreak } from "@/lib/history";
 import { SessionCard } from "@/components/SessionCard";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
@@ -29,9 +30,11 @@ export default function Home() {
   const [type, setType] = useState<ExerciseType | "todos">("todos");
   const [weekday, setWeekday] = useState<number | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [streak, setStreak] = useState<number | null>(null);
 
   useEffect(() => {
     setWeekday(new Date().getDay());
+    setStreak(getStreak());
   }, []);
 
   const todayPlan = weekday !== null ? getDayPlan(weekday) : null;
@@ -143,6 +146,17 @@ export default function Home() {
           <p className="text-xs text-black/60 dark:text-white/60">
             Cuerpo libre o kettlebell.
           </p>
+          <div className="mt-1 flex items-center justify-between gap-2">
+            {!!streak && (
+              <span className="text-xs font-semibold">🔥 {streak} {streak === 1 ? "día seguido" : "días seguidos"}</span>
+            )}
+            <Link
+              href="/historial"
+              className="text-xs font-medium text-black/50 hover:text-black dark:text-white/50 dark:hover:text-white"
+            >
+              Historial →
+            </Link>
+          </div>
         </header>
         {dayBanner}
         {filters}
@@ -150,14 +164,27 @@ export default function Home() {
 
       <main className="flex flex-1 flex-col gap-8 min-w-0">
         <div className="flex flex-col gap-6 lg:hidden">
-          <header className="flex items-start justify-between gap-3">
-            <div className="flex flex-col gap-1">
-              <h1 className="text-3xl font-black tracking-tight">JAYFIT</h1>
-              <p className="text-sm text-black/60 dark:text-white/60">
-                Sesiones de entrenamiento sin excusas. Cuerpo libre o kettlebell.
-              </p>
+          <header className="flex flex-col gap-1">
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex flex-col gap-1">
+                <h1 className="text-3xl font-black tracking-tight">JAYFIT</h1>
+                <p className="text-sm text-black/60 dark:text-white/60">
+                  Sesiones de entrenamiento sin excusas. Cuerpo libre o kettlebell.
+                </p>
+              </div>
+              <ThemeToggle />
             </div>
-            <ThemeToggle />
+            <div className="mt-1 flex items-center justify-between gap-2">
+              {!!streak && (
+                <span className="text-sm font-semibold">🔥 {streak} {streak === 1 ? "día seguido" : "días seguidos"}</span>
+              )}
+              <Link
+                href="/historial"
+                className="text-sm font-medium text-black/50 hover:text-black dark:text-white/50 dark:hover:text-white"
+              >
+                Historial →
+              </Link>
+            </div>
           </header>
           {dayBanner}
           <button

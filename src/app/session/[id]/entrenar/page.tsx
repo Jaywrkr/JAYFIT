@@ -7,6 +7,7 @@ import { getSessionById } from "@/lib/sessions";
 import { getExerciseById } from "@/lib/exercises";
 import { buildSteps } from "@/lib/workout";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { addHistoryEntry, setLastEntryRpe } from "@/lib/history";
 
 export default function TrainPage() {
   const params = useParams<{ id: string }>();
@@ -21,6 +22,7 @@ export default function TrainPage() {
   });
   const [paused, setPaused] = useState(false);
   const [finished, setFinished] = useState(false);
+  const [rpe, setRpe] = useState<number | null>(null);
 
   const stepIndex = progress.index;
   const secondsLeft = progress.seconds;
@@ -48,6 +50,14 @@ export default function TrainPage() {
     }
   }, [stepIndex, steps.length]);
 
+  useEffect(() => {
+    if (finished && session) {
+      addHistoryEntry(session.id);
+      setRpe(null);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [finished]);
+
   if (!session) {
     return (
       <div className="mx-auto flex w-full max-w-md flex-1 flex-col items-center justify-center gap-4 px-5 text-center">
@@ -66,6 +76,31 @@ export default function TrainPage() {
         <p className="text-black/60 dark:text-white/60">
           Completaste {session.name}. Buen trabajo.
         </p>
+
+        <div className="flex w-full flex-col gap-2">
+          <p className="text-sm font-medium text-black/70 dark:text-white/70">
+            ¿Qué tan duro estuvo? (1 = fácil, 10 = al límite)
+          </p>
+          <div className="flex flex-wrap justify-center gap-1.5">
+            {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
+              <button
+                key={n}
+                onClick={() => {
+                  setRpe(n);
+                  setLastEntryRpe(session.id, n);
+                }}
+                className={`flex h-9 w-9 items-center justify-center rounded-full border text-sm font-semibold transition-colors ${
+                  rpe === n
+                    ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                    : "border-black/15 text-black/70 hover:border-black/40 dark:border-white/20 dark:text-white/70 dark:hover:border-white/50"
+                }`}
+              >
+                {n}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="flex w-full flex-col gap-3">
           <Link
             href={`/session/${session.id}/entrenar`}
