@@ -1204,6 +1204,32 @@ export const SESSIONS: Session[] = [
       { exerciseId: "plancha-lateral", sets: 2, workSeconds: 25, restSeconds: 30 },
     ],
   },
+  {
+    id: "core-express-explosivo",
+    name: "Core Express — Explosivo (8 min)",
+    bodyParts: ["core"],
+    difficulty: "intermedio",
+    equipment: ["ninguno"],
+    description: "Ritmo alto: core con componente cardio, no solo fuerza.",
+    blocks: [
+      { exerciseId: "mountain-climber", sets: 3, workSeconds: 25, restSeconds: 25 },
+      { exerciseId: "plank-jack", sets: 2, workSeconds: 20, restSeconds: 25 },
+      { exerciseId: "v-ups", sets: 2, reps: 12, restSeconds: 25 },
+    ],
+  },
+  {
+    id: "core-express-equilibrio",
+    name: "Core Express — Equilibrio (8 min)",
+    bodyParts: ["core"],
+    difficulty: "principiante",
+    equipment: ["ninguno"],
+    description: "Control y estabilidad antirrotación, ritmo tranquilo.",
+    blocks: [
+      { exerciseId: "dead-bug", sets: 3, reps: 10, restSeconds: 30 },
+      { exerciseId: "elevacion-piernas", sets: 2, reps: 12, restSeconds: 30 },
+      { exerciseId: "plancha-lateral", sets: 2, workSeconds: 20, restSeconds: 30 },
+    ],
+  },
 
   // ---------- MUCHA MÁS VARIEDAD GENERAL ----------
   {
