@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { geistMono } from "./fonts";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "JAYFIT",
@@ -57,12 +47,12 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistMono.variable} h-full antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-black dark:bg-black dark:text-white">
+      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-foreground selection:text-background">
         {children}
         <ServiceWorkerRegister />
       </body>

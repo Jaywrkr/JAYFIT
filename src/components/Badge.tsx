@@ -6,10 +6,10 @@ export function Badge({
   variant?: "outline" | "solid";
 }) {
   const base =
-    "inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wide";
+    "inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider";
   const styles =
     variant === "solid"
-      ? "bg-black text-white border-black dark:bg-white dark:text-black dark:border-white"
-      : "border-black/20 text-black/70 dark:border-white/25 dark:text-white/70";
+      ? "bg-accent text-accent-foreground border-accent"
+      : "border-border text-muted";
   return <span className={`${base} ${styles}`}>{children}</span>;
 }

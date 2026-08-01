@@ -11,15 +11,15 @@ export function SessionCard({ session }: { session: Session }) {
   return (
     <Link
       href={`/session/${session.id}`}
-      className="group flex flex-col gap-3 rounded-2xl border border-black/10 p-5 transition-colors hover:border-black dark:border-white/15 dark:hover:border-white"
+      className="group flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5 transition-all hover:border-foreground hover:-translate-y-0.5"
     >
       <div className="flex items-start justify-between gap-2">
-        <h3 className="text-lg font-semibold leading-tight">{session.name}</h3>
-        <span className="shrink-0 text-sm font-medium text-black/50 dark:text-white/50">
+        <h3 className="text-lg font-medium leading-tight tracking-tight">{session.name}</h3>
+        <span className="shrink-0 text-sm font-medium text-muted">
           {duration}
         </span>
       </div>
-      <p className="text-sm text-black/60 dark:text-white/60">
+      <p className="text-sm text-muted">
         {session.description}
       </p>
       <div className="mt-1 flex flex-wrap gap-1.5">

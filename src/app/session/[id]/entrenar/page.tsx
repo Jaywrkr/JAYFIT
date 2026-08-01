@@ -72,13 +72,13 @@ export default function TrainPage() {
   if (finished) {
     return (
       <div className="mx-auto flex w-full max-w-md flex-1 flex-col items-center justify-center gap-6 px-5 text-center">
-        <h1 className="text-4xl font-black">Listo</h1>
-        <p className="text-black/60 dark:text-white/60">
+        <h1 className="text-4xl font-medium tracking-tight">Listo</h1>
+        <p className="text-muted">
           Completaste {session.name}. Buen trabajo.
         </p>
 
         <div className="flex w-full flex-col gap-2">
-          <p className="text-sm font-medium text-black/70 dark:text-white/70">
+          <p className="text-sm font-medium text-foreground/80">
             ¿Qué tan duro estuvo? (1 = fácil, 10 = al límite)
           </p>
           <div className="flex flex-wrap justify-center gap-1.5">
@@ -89,10 +89,10 @@ export default function TrainPage() {
                   setRpe(n);
                   setLastEntryRpe(session.id, n);
                 }}
-                className={`flex h-9 w-9 items-center justify-center rounded-full border text-sm font-semibold transition-colors ${
+                className={`flex h-9 w-9 items-center justify-center rounded-full border text-sm font-medium transition-colors ${
                   rpe === n
-                    ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
-                    : "border-black/15 text-black/70 hover:border-black/40 dark:border-white/20 dark:text-white/70 dark:hover:border-white/50"
+                    ? "border-accent bg-accent text-accent-foreground"
+                    : "border-border text-muted hover:border-foreground hover:text-foreground"
                 }`}
               >
                 {n}
@@ -108,13 +108,13 @@ export default function TrainPage() {
               setProgress({ index: 0, seconds: steps[0]?.seconds ?? 0 });
               setFinished(false);
             }}
-            className="rounded-full bg-black px-6 py-3.5 text-center text-base font-semibold text-white dark:bg-white dark:text-black"
+            className="rounded-full bg-accent px-6 py-3.5 text-center text-base font-medium text-accent-foreground"
           >
             Repetir sesión
           </Link>
           <Link
             href="/"
-            className="rounded-full border border-black/20 px-6 py-3.5 text-center text-base font-semibold dark:border-white/25"
+            className="rounded-full border border-border px-6 py-3.5 text-center text-base font-medium hover:border-foreground"
           >
             Volver al inicio
           </Link>
@@ -149,13 +149,13 @@ export default function TrainPage() {
       <div className="flex items-center gap-3">
         <button
           onClick={goBack}
-          className="text-sm font-medium text-black/50 hover:text-black dark:text-white/50 dark:hover:text-white"
+          className="text-sm font-medium text-muted hover:text-foreground"
         >
           ✕
         </button>
-        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-black/10 dark:bg-white/15">
+        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-border">
           <div
-            className="h-full rounded-full bg-black transition-all dark:bg-white"
+            className="h-full rounded-full bg-accent transition-all"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
@@ -165,46 +165,46 @@ export default function TrainPage() {
       <div className="flex flex-1 flex-col items-center justify-center gap-6 text-center">
         {isPrepare && (
           <>
-            <p className="text-sm font-semibold uppercase tracking-widest text-black/50 dark:text-white/50">
+            <p className="text-sm font-medium uppercase tracking-widest text-muted">
               Prepárate
             </p>
-            <p className="text-2xl font-bold">{session.name}</p>
+            <p className="text-2xl font-medium">{session.name}</p>
           </>
         )}
 
         {isRest && (
-          <p className="text-sm font-semibold uppercase tracking-widest text-black/50 dark:text-white/50">
+          <p className="text-sm font-medium uppercase tracking-widest text-muted">
             Descanso
           </p>
         )}
 
         {!isRest && !isPrepare && (
           <>
-            <p className="text-sm font-semibold uppercase tracking-widest text-black/50 dark:text-white/50">
+            <p className="text-sm font-medium uppercase tracking-widest text-muted">
               Ronda {step.setNumber} de {step.totalSets}
             </p>
-            <h1 className="text-3xl font-black leading-tight">
+            <h1 className="text-3xl font-medium leading-tight tracking-tight">
               {exercise?.name}
             </h1>
             {step.reps && (
-              <p className="text-lg font-medium text-black/60 dark:text-white/60">
+              <p className="text-lg font-medium text-muted">
                 {step.reps} repeticiones
               </p>
             )}
           </>
         )}
 
-        <div className="text-7xl font-black tabular-nums">{secondsLeft}</div>
+        <div className="text-7xl font-medium tabular-nums">{secondsLeft}</div>
 
         {!isRest && !isPrepare && exercise && (
-          <p className="max-w-sm text-sm text-black/50 dark:text-white/50">
+          <p className="max-w-sm text-sm text-muted">
             {exercise.instructions}
           </p>
         )}
 
         {isRest && nextExercise && (
-          <p className="text-base text-black/60 dark:text-white/60">
-            Sigue: <span className="font-semibold">{nextExercise.name}</span>
+          <p className="text-base text-muted">
+            Sigue: <span className="font-medium">{nextExercise.name}</span>
           </p>
         )}
       </div>
@@ -212,13 +212,13 @@ export default function TrainPage() {
       <div className="flex gap-3">
         <button
           onClick={() => setPaused((p) => !p)}
-          className="flex-1 rounded-full border border-black/20 px-6 py-3.5 text-base font-semibold dark:border-white/25"
+          className="flex-1 rounded-full border border-border px-6 py-3.5 text-base font-medium hover:border-foreground"
         >
           {paused ? "Reanudar" : "Pausar"}
         </button>
         <button
           onClick={skip}
-          className="flex-1 rounded-full bg-black px-6 py-3.5 text-base font-semibold text-white dark:bg-white dark:text-black"
+          className="flex-1 rounded-full bg-accent px-6 py-3.5 text-base font-medium text-accent-foreground"
         >
           Siguiente
         </button>

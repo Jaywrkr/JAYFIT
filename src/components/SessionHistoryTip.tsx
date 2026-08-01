@@ -20,12 +20,12 @@ export function SessionHistoryTip({ sessionId }: { sessionId: string }) {
   const tip = getProgressionTip(lastEntry);
 
   return (
-    <div className="flex flex-col gap-1 rounded-xl border border-black/10 p-3 text-sm dark:border-white/15">
-      <span className="text-black/70 dark:text-white/70">
-        Última vez: <strong>{formatRelativeDate(lastEntry.completedAt)}</strong>
+    <div className="flex flex-col gap-1 rounded-xl border border-border bg-surface p-3 text-sm">
+      <span className="text-foreground/80">
+        Última vez: <strong className="font-medium">{formatRelativeDate(lastEntry.completedAt)}</strong>
         {lastEntry.rpe !== undefined && <> · esfuerzo {lastEntry.rpe}/10</>}
       </span>
-      {tip && <span className="text-black/60 dark:text-white/60">{tip}</span>}
+      {tip && <span className="text-muted">{tip}</span>}
     </div>
   );
 }
