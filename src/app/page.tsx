@@ -64,7 +64,11 @@ export default function Home() {
         {WEEKDAY_LABELS[weekday!]}
       </span>
       <p className="text-xs leading-snug">
-        {todayPlan.flexible ? (
+        {todayPlan.recovery ? (
+          <>
+            Descanso activo: movilidad suave, nada de intensidad hoy.
+          </>
+        ) : todayPlan.flexible ? (
           <>
             Día flexible: <strong className="font-medium">full body</strong> o <strong className="font-medium">cardio/HIIT</strong>.
           </>
@@ -80,10 +84,13 @@ export default function Home() {
       </p>
       <div className="flex flex-wrap gap-1.5">
         <button
-          onClick={() => setBodyPart(todayPlan.bodyParts[0])}
-          className="rounded-full border border-accent bg-accent px-2.5 py-1 text-xs font-medium text-accent-foreground"
+          onClick={() => {
+            setBodyPart(todayPlan.bodyParts[0]);
+            if (todayPlan.recovery) setDifficulty("principiante");
+          }}
+          className="rounded-full border border-black bg-black px-2.5 py-1 text-xs font-medium text-white dark:border-white dark:bg-white dark:text-black"
         >
-          Sesiones de hoy
+          {todayPlan.recovery ? "Sesiones suaves" : "Sesiones de hoy"}
         </button>
         {dailyCoreSession && (
           <Link
