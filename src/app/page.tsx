@@ -59,8 +59,8 @@ export default function Home() {
   }, [bodyPart, difficulty, equipment, type]);
 
   const dayBanner = todayPlan && (
-    <div className="flex flex-col gap-2 rounded-xl border border-black/10 p-3 dark:border-white/15">
-      <span className="text-[10px] font-semibold uppercase tracking-wide text-black/40 dark:text-white/40">
+    <div className="flex flex-col gap-2 rounded-xl border border-border bg-surface p-3">
+      <span className="text-[10px] font-medium uppercase tracking-wide text-muted">
         {WEEKDAY_LABELS[weekday!]}
       </span>
       <p className="text-xs leading-snug">
@@ -70,12 +70,12 @@ export default function Home() {
           </>
         ) : todayPlan.flexible ? (
           <>
-            Día flexible: <strong>full body</strong> o <strong>cardio/HIIT</strong>.
+            Día flexible: <strong className="font-medium">full body</strong> o <strong className="font-medium">cardio/HIIT</strong>.
           </>
         ) : (
           <>
             Toca{" "}
-            <strong>
+            <strong className="font-medium">
               {todayPlan.bodyParts.map((bp) => BODY_PART_LABELS[bp]).join(" / ")}
             </strong>
             .
@@ -95,7 +95,7 @@ export default function Home() {
         {dailyCoreSession && (
           <Link
             href={`/session/${dailyCoreSession.id}`}
-            className="rounded-full border border-black/20 px-2.5 py-1 text-xs font-medium dark:border-white/25"
+            className="rounded-full border border-border px-2.5 py-1 text-xs font-medium hover:border-foreground"
           >
             + Core (8 min)
           </Link>
@@ -109,19 +109,19 @@ export default function Home() {
     programToday === undefined ? null : programToday ? (
       <Link
         href="/programa"
-        className="flex flex-col gap-0.5 rounded-xl border border-black/10 p-3 text-xs dark:border-white/15"
+        className="flex flex-col gap-0.5 rounded-xl border border-border bg-surface p-3 text-xs"
       >
-        <span className="font-semibold">
+        <span className="font-medium">
           Programa · Semana {programToday.week}/{PROGRAM_WEEKS}
         </span>
-        <span className="text-black/60 dark:text-white/60">
+        <span className="text-muted">
           {programSession ? `Hoy: ${programSession.name}` : "Ver plan de hoy"}
         </span>
       </Link>
     ) : (
       <Link
         href="/programa"
-        className="rounded-xl border border-dashed border-black/20 p-3 text-xs text-black/60 hover:border-black/40 dark:border-white/25 dark:text-white/60 dark:hover:border-white/50"
+        className="rounded-xl border border-dashed border-border p-3 text-xs text-muted hover:border-foreground"
       >
         ¿Seguir un programa estructurado de 8 semanas? →
       </Link>
@@ -174,19 +174,19 @@ export default function Home() {
       <aside className="hidden lg:sticky lg:top-8 lg:flex lg:w-56 lg:shrink-0 lg:flex-col lg:gap-4">
         <header className="flex flex-col gap-1">
           <div className="flex items-center justify-between gap-2">
-            <h1 className="text-xl font-black tracking-tight">JAYFIT</h1>
+            <h1 className="text-xl font-medium tracking-tight">JAYFIT</h1>
             <ThemeToggle />
           </div>
-          <p className="text-xs text-black/60 dark:text-white/60">
+          <p className="text-xs text-muted">
             Cuerpo libre o kettlebell.
           </p>
           <div className="mt-1 flex items-center justify-between gap-2">
             {!!streak && (
-              <span className="text-xs font-semibold">🔥 {streak} {streak === 1 ? "día seguido" : "días seguidos"}</span>
+              <span className="text-xs font-medium text-accent">● {streak} {streak === 1 ? "día seguido" : "días seguidos"}</span>
             )}
             <Link
               href="/historial"
-              className="text-xs font-medium text-black/50 hover:text-black dark:text-white/50 dark:hover:text-white"
+              className="text-xs font-medium text-muted hover:text-foreground"
             >
               Historial →
             </Link>
@@ -202,8 +202,8 @@ export default function Home() {
           <header className="flex flex-col gap-1">
             <div className="flex items-start justify-between gap-3">
               <div className="flex flex-col gap-1">
-                <h1 className="text-3xl font-black tracking-tight">JAYFIT</h1>
-                <p className="text-sm text-black/60 dark:text-white/60">
+                <h1 className="text-3xl font-medium tracking-tight">JAYFIT</h1>
+                <p className="text-sm text-muted">
                   Sesiones de entrenamiento sin excusas. Cuerpo libre o kettlebell.
                 </p>
               </div>
@@ -211,11 +211,11 @@ export default function Home() {
             </div>
             <div className="mt-1 flex items-center justify-between gap-2">
               {!!streak && (
-                <span className="text-sm font-semibold">🔥 {streak} {streak === 1 ? "día seguido" : "días seguidos"}</span>
+                <span className="text-sm font-medium text-accent">● {streak} {streak === 1 ? "día seguido" : "días seguidos"}</span>
               )}
               <Link
                 href="/historial"
-                className="text-sm font-medium text-black/50 hover:text-black dark:text-white/50 dark:hover:text-white"
+                className="text-sm font-medium text-muted hover:text-foreground"
               >
                 Historial →
               </Link>
@@ -225,7 +225,7 @@ export default function Home() {
           {programWidget}
           <button
             onClick={() => setFiltersOpen(true)}
-            className="flex items-center gap-2 self-start rounded-full border border-black/15 px-4 py-2 text-sm font-medium dark:border-white/20"
+            className="flex items-center gap-2 self-start rounded-full border border-border px-4 py-2 text-sm font-medium hover:border-foreground"
           >
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M4 7h16M4 12h16M4 17h16" />
@@ -239,7 +239,7 @@ export default function Home() {
             <SessionCard key={session.id} session={session} />
           ))}
           {sessions.length === 0 && (
-            <p className="col-span-full py-10 text-center text-sm text-black/50 dark:text-white/50">
+            <p className="col-span-full py-10 text-center text-sm text-muted">
               No hay sesiones con esos filtros.
             </p>
           )}
@@ -253,13 +253,13 @@ export default function Home() {
             onClick={() => setFiltersOpen(false)}
             className="absolute inset-0 bg-black/40"
           />
-          <div className="absolute inset-y-0 left-0 flex w-80 max-w-[85vw] flex-col gap-6 overflow-y-auto bg-white p-5 shadow-xl dark:bg-black">
+          <div className="absolute inset-y-0 left-0 flex w-80 max-w-[85vw] flex-col gap-6 overflow-y-auto bg-background p-5 shadow-xl">
             <div className="flex items-center justify-between gap-3">
-              <h2 className="text-lg font-black tracking-tight">Filtros</h2>
+              <h2 className="text-lg font-medium tracking-tight">Filtros</h2>
               <button
                 onClick={() => setFiltersOpen(false)}
                 aria-label="Cerrar"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-black/15 dark:border-white/20"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-border hover:border-foreground"
               >
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                   <path d="M6 6l12 12M18 6L6 18" />
@@ -287,7 +287,7 @@ function FilterRow<T extends string>({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <span className="text-[10px] font-semibold uppercase tracking-wide text-black/40 dark:text-white/40">
+      <span className="text-[10px] font-medium uppercase tracking-wide text-muted">
         {label}
       </span>
       <div className="flex flex-wrap gap-1">
@@ -299,8 +299,8 @@ function FilterRow<T extends string>({
               onClick={() => onChange(opt.value)}
               className={`whitespace-nowrap rounded-full border px-2 py-1 text-xs font-medium transition-colors ${
                 active
-                  ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
-                  : "border-black/15 text-black/70 hover:border-black/40 dark:border-white/20 dark:text-white/70 dark:hover:border-white/50"
+                  ? "border-accent bg-accent text-accent-foreground"
+                  : "border-border text-muted hover:border-foreground hover:text-foreground"
               }`}
             >
               {opt.label}
