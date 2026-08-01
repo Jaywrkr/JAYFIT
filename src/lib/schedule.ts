@@ -14,22 +14,35 @@ export interface DayPlan {
   bodyParts: BodyPart[];
   /** Días "flexibles": full body / cardio, sirven cualquier día de la semana. */
   flexible: boolean;
+  /** Día de descanso activo: intensidad siempre baja, sin importar la fase del programa. */
+  recovery?: boolean;
 }
 
 /**
- * Split recomendado para ganar músculo entrenando con solo peso corporal y un
- * kettlebell: piernas dos veces por semana (responden mejor a más frecuencia
- * cuando la carga es baja), pecho/espalda/brazos una vez, y el fin de semana
- * libre para full body o cardio.
+ * Split de 6 días de entrenamiento + 1 de recuperación real, pensado para
+ * maximizar la frecuencia por grupo muscular con carga fija (peso corporal +
+ * un kettlebell):
+ *
+ * - Piernas 3x/semana: con carga externa baja, las piernas toleran y se
+ *   benefician de más frecuencia que un solo día pesado semanal.
+ * - Empuje (pecho + brazos) y tirón (espalda + brazos) 1x dedicado cada uno,
+ *   más una segunda exposición indirecta el sábado (full body/cardio toca
+ *   los dos patrones), dando ~1.5-2x/semana real a pecho y espalda, y 2x
+ *   dedicado a brazos (están en ambos días).
+ * - Domingo es descanso activo de verdad — antes el "día flexible" era otro
+ *   entrenamiento completo, así que no había ningún día de recuperación real
+ *   en la semana.
+ * - Core se cubre aparte todos los días con el añadido "Core Express" diario
+ *   (ver DAILY_CORE_SESSION_BY_WEEKDAY), así que no necesita su propio día.
  */
 export const WEEKLY_SPLIT: Record<number, DayPlan> = {
-  0: { bodyParts: ["full-body", "cardio"], flexible: true }, // domingo
-  1: { bodyParts: ["piernas"], flexible: false }, // lunes
-  2: { bodyParts: ["pecho"], flexible: false }, // martes
-  3: { bodyParts: ["espalda"], flexible: false }, // miércoles
-  4: { bodyParts: ["piernas"], flexible: false }, // jueves
-  5: { bodyParts: ["brazos"], flexible: false }, // viernes
-  6: { bodyParts: ["full-body", "cardio"], flexible: true }, // sábado
+  0: { bodyParts: ["full-body"], flexible: true, recovery: true }, // domingo: descanso activo
+  1: { bodyParts: ["piernas"], flexible: false }, // lunes: piernas (cuádriceps/sentadilla)
+  2: { bodyParts: ["pecho", "brazos"], flexible: false }, // martes: empuje
+  3: { bodyParts: ["piernas"], flexible: false }, // miércoles: piernas (glúteo/isquios)
+  4: { bodyParts: ["espalda", "brazos"], flexible: false }, // jueves: tirón
+  5: { bodyParts: ["piernas"], flexible: false }, // viernes: piernas (unilateral/explosivo)
+  6: { bodyParts: ["full-body", "cardio"], flexible: true }, // sábado: full body / cardio
 };
 
 export function getDayPlan(weekday: number): DayPlan {

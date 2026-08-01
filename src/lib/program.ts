@@ -65,6 +65,7 @@ export interface ProgramDayPlan {
   phase: ProgramPhase;
   bodyParts: ReturnType<typeof getDayPlan>["bodyParts"];
   flexible: boolean;
+  recovery: boolean;
   sessionId: string | null;
 }
 
@@ -90,13 +91,17 @@ export function getProgramDayPlan(startDate: string, date: Date = new Date()): P
 
   const phase = getPhaseForWeek(week);
   const dayPlan = getDayPlan(date.getDay());
-  const sessionId = pickSessionId(dayPlan.bodyParts, phase.difficulty, week);
+  // Un día de recuperación se mantiene siempre suave, sin importar en qué
+  // fase del programa esté la semana (nunca sube a avanzado/extremo).
+  const effectiveDifficulty: Difficulty = dayPlan.recovery ? "principiante" : phase.difficulty;
+  const sessionId = pickSessionId(dayPlan.bodyParts, effectiveDifficulty, week);
 
   return {
     week,
     phase,
     bodyParts: dayPlan.bodyParts,
     flexible: dayPlan.flexible,
+    recovery: !!dayPlan.recovery,
     sessionId,
   };
 }
