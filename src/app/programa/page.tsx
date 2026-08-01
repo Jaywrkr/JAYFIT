@@ -117,7 +117,9 @@ export default function ProgramaPage() {
           Hoy
         </span>
         <p className="text-sm">
-          {today.flexible ? (
+          {today.recovery ? (
+            <>Descanso activo: movilidad suave, nada de intensidad hoy.</>
+          ) : today.flexible ? (
             <>Día flexible: <strong>full body</strong> o <strong>cardio/HIIT</strong>.</>
           ) : (
             <>Toca <strong>{today.bodyParts.map((bp) => BODY_PART_LABELS[bp]).join(" / ")}</strong>.</>
@@ -166,7 +168,7 @@ export default function ProgramaPage() {
                   {done ? "✓" : ""}
                 </span>
                 <span className="text-[9px] leading-tight text-black/50 dark:text-white/50">
-                  {plan.flexible ? "Libre" : BODY_PART_LABELS[plan.bodyParts[0]]}
+                  {plan.recovery ? "Descanso" : plan.flexible ? "Libre" : BODY_PART_LABELS[plan.bodyParts[0]]}
                 </span>
               </div>
             );
