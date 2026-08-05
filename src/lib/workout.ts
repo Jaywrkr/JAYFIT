@@ -25,34 +25,47 @@ function blockWorkSeconds(workSeconds?: number, reps?: number): number {
  * ejercicio antes de pasar al siguiente, se recorren todos los ejercicios en
  * la ronda 1, luego todos en la ronda 2, etc. (ejercicio A serie 1, ejercicio
  * B serie 1, ejercicio C serie 1, ejercicio A serie 2...).
+ *
+ * Algunos ejercicios tienen menos series que otros dentro de la misma sesión
+ * (p. ej. un movimiento accesorio con 3 series junto a otros con 4), así que
+ * dejan de aparecer en las últimas rondas. Eso es intencional, pero el
+ * contador "Ronda X de Y" debe usar siempre el total de rondas de la SESIÓN
+ * (maxSets), no las series propias de cada ejercicio — si no, un ejercicio
+ * con menos series muestra "Ronda 3 de 3" mientras la sesión sigue en la
+ * ronda 4, dando la sensación de que el entrenamiento termina a medias.
  */
 export function buildSteps(session: Session): WorkoutStep[] {
   const steps: WorkoutStep[] = [{ kind: "prepare", seconds: 10 }];
 
   const maxSets = Math.max(...session.blocks.map((b) => b.sets));
 
+  // Aplana todas las ejecuciones reales (ronda, bloque) en orden, para poder
+  // saber con certeza cuál es la última de toda la sesión sin depender de la
+  // posición del bloque en el arreglo (que puede no ser el que más series tiene).
+  const executions: { round: number; blockIndex: number }[] = [];
   for (let round = 1; round <= maxSets; round++) {
     session.blocks.forEach((block, blockIndex) => {
-      if (round > block.sets) return;
-
-      steps.push({
-        kind: "work",
-        seconds: blockWorkSeconds(block.workSeconds, block.reps),
-        exerciseId: block.exerciseId,
-        reps: block.reps,
-        setNumber: round,
-        totalSets: block.sets,
-        blockIndex,
-      });
-
-      const isLastStepOfSession =
-        round === maxSets && blockIndex === session.blocks.length - 1;
-
-      if (!isLastStepOfSession) {
-        steps.push({ kind: "rest", seconds: block.restSeconds });
-      }
+      if (round <= block.sets) executions.push({ round, blockIndex });
     });
   }
+
+  executions.forEach(({ round, blockIndex }, i) => {
+    const block = session.blocks[blockIndex];
+    steps.push({
+      kind: "work",
+      seconds: blockWorkSeconds(block.workSeconds, block.reps),
+      exerciseId: block.exerciseId,
+      reps: block.reps,
+      setNumber: round,
+      totalSets: maxSets,
+      blockIndex,
+    });
+
+    const isLastStepOfSession = i === executions.length - 1;
+    if (!isLastStepOfSession) {
+      steps.push({ kind: "rest", seconds: block.restSeconds });
+    }
+  });
 
   return steps;
 }

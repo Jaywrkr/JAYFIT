@@ -69,11 +69,19 @@ export interface ProgramDayPlan {
   sessionId: string | null;
 }
 
-/** Elige una sesión concreta para el día, variando por semana entre las que calzan. */
+/**
+ * Elige una sesión concreta para el día. Usa el número de día desde el
+ * inicio del programa (no la semana) para variar el índice dentro del pool:
+ * si usáramos la semana, los 3 días de piernas de una misma semana caerían
+ * en el mismo índice y elegirían exactamente la misma sesión los tres días.
+ * Con el día como índice, cada día de piernas de la semana avanza una
+ * posición en el pool, así que no se repite la sesión ni esa semana ni
+ * (mientras el pool tenga más de una opción) en el siguiente día cercano.
+ */
 function pickSessionId(
   bodyParts: ReturnType<typeof getDayPlan>["bodyParts"],
   difficulty: Difficulty,
-  week: number
+  dayIndex: number
 ): string | null {
   const matches = SESSIONS.filter(
     (s) => s.difficulty === difficulty && s.bodyParts.some((bp) => bodyParts.includes(bp))
@@ -82,7 +90,7 @@ function pickSessionId(
     ? matches
     : SESSIONS.filter((s) => s.bodyParts.some((bp) => bodyParts.includes(bp)));
   if (pool.length === 0) return null;
-  return pool[week % pool.length].id;
+  return pool[dayIndex % pool.length].id;
 }
 
 export function getProgramDayPlan(startDate: string, date: Date = new Date()): ProgramDayPlan | null {
@@ -91,10 +99,11 @@ export function getProgramDayPlan(startDate: string, date: Date = new Date()): P
 
   const phase = getPhaseForWeek(week);
   const dayPlan = getDayPlan(date.getDay());
+  const dayIndex = daysBetween(new Date(startDate), date);
   // Un día de recuperación se mantiene siempre suave, sin importar en qué
   // fase del programa esté la semana (nunca sube a avanzado/extremo).
   const effectiveDifficulty: Difficulty = dayPlan.recovery ? "principiante" : phase.difficulty;
-  const sessionId = pickSessionId(dayPlan.bodyParts, effectiveDifficulty, week);
+  const sessionId = pickSessionId(dayPlan.bodyParts, effectiveDifficulty, dayIndex);
 
   return {
     week,
