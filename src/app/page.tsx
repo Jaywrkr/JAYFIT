@@ -24,6 +24,15 @@ const TYPES = Object.keys(TYPE_LABELS) as ExerciseType[];
 
 type EquipmentFilter = "todos" | "sin-equipo" | "con-kettlebell";
 
+const FILTERS_STORAGE_KEY = "jayfit_filters";
+
+interface StoredFilters {
+  bodyPart: BodyPart | "todos";
+  difficulty: Difficulty | "todos";
+  equipment: EquipmentFilter;
+  type: ExerciseType | "todos";
+}
+
 export default function Home() {
   const [bodyPart, setBodyPart] = useState<BodyPart | "todos">("todos");
   const [difficulty, setDifficulty] = useState<Difficulty | "todos">("intermedio");
@@ -33,13 +42,36 @@ export default function Home() {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [streak, setStreak] = useState<number | null>(null);
   const [programToday, setProgramToday] = useState<ProgramDayPlan | null | undefined>(undefined);
+  const [filtersLoaded, setFiltersLoaded] = useState(false);
 
   useEffect(() => {
     setWeekday(new Date().getDay());
     setStreak(getStreak());
     const startDate = getProgramStartDate();
     setProgramToday(startDate ? getProgramDayPlan(startDate) : null);
+
+    // Restaura los filtros al volver (p. ej. con el botón atrás desde una
+    // sesión) en vez de reiniciarlos siempre a los valores por defecto.
+    try {
+      const saved = window.sessionStorage.getItem(FILTERS_STORAGE_KEY);
+      if (saved) {
+        const f = JSON.parse(saved) as StoredFilters;
+        if (f.bodyPart) setBodyPart(f.bodyPart);
+        if (f.difficulty) setDifficulty(f.difficulty);
+        if (f.equipment) setEquipment(f.equipment);
+        if (f.type) setType(f.type);
+      }
+    } catch {
+      // localStorage/sessionStorage puede fallar en modo privado; no es crítico.
+    }
+    setFiltersLoaded(true);
   }, []);
+
+  useEffect(() => {
+    if (!filtersLoaded) return;
+    const toStore: StoredFilters = { bodyPart, difficulty, equipment, type };
+    window.sessionStorage.setItem(FILTERS_STORAGE_KEY, JSON.stringify(toStore));
+  }, [filtersLoaded, bodyPart, difficulty, equipment, type]);
 
   const todayPlan = weekday !== null ? getDayPlan(weekday) : null;
   const dailyCoreSession =
